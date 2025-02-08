@@ -64,24 +64,10 @@ nav{
 }
 .Buttons > .NavItem
 {
-    /* mask: 
-     linear-gradient(#fff 0 0) padding-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
--webkit-mask: 
-     linear-gradient(#fff 0 0) padding-box, 
-     linear-gradient(#fff 0 0);
-    border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
-    border-width: 2px;
-    border-radius: 10px;
-    border-style: solid;
-    position: relative;
-    z-index: 1; */
     border: none;
     padding: 5px 20px;
     border-radius: 10px;
-    /* margin-left: 20px; */
+ 
     background: white;
 }
 .NavItemBack
@@ -89,47 +75,7 @@ nav{
 
 
 }
-.Footer
-{
-    text-align: start;
-    justify-content: center;
-    list-style-type: none;
-    color: white;
-    height: max-content;
-    /* width: 1348px; */
-   display: flex; 
-   flex-direction: column;
-   
-    
-    
-}
-.FooterItem a
-{
-    text-decoration: none;
-}
-.MainFooter
-{
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.Copy
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin-top: 2vh;
-}
-.Icons
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8vh;
-}
+
 .btn{
 padding: 8px 5px 8px 5px;
 border-radius: 10px;
