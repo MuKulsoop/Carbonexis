@@ -95,8 +95,8 @@ nav{
     justify-content: center;
     list-style-type: none;
     color: white;
-    height: 100px;
-    width: 1348px;
+    height: max-content;
+    /* width: 1348px; */
    display: flex; 
    flex-direction: column;
    
@@ -112,7 +112,7 @@ nav{
     width: 100%;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .Copy
