@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+   
+}
+
+nav{
+    display: flex;
+    height: 88px;
+    width: 100%;
+    background-color: #04011C;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.logo
+{
+    /* display: flex;
+    float: left; */
+   color: white;
+   margin-left: 20px;
+}
+
+.NavItem a
+{
+    display: inline-block;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+   color: white;
+   padding: 0 23px;
+   align-items: center;
+   display: flex; 
+  justify-content : space-between; 
+
+}
+.NavItem a:hover
+{
+    color: rgb(156, 156, 190);
+    font-weight: bolder;
+}
+.NavItems 
+{   
+    list-style-type: none;     /* ki bindu bindu na aaye */  
+    display: flex;
+    text-decoration: none;
+    justify-items: end;
+    align-items: center;
+   
+    
+    color: rgb(255, 255, 255);
+    background-color: #04011C;
+}
+.Buttons {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   margin: 20px;
+   border:2px;
+   border: #04011C;
+}
+.Buttons > .NavItem
+{
+    /* mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+-webkit-mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+    border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    position: relative;
+    z-index: 1; */
+    border: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+    /* margin-left: 20px; */
+    background: white;
+}
+.NavItemBack
+{ margin-left: 20px;
+
+
+}
+.Footer
+{
+    list-style-type: none;
+    color: white;
+    height: 100px;
+    width: 1348px;
+   display: flex; 
+   flex-direction: column;
+    justify-items: stretch;
+    /* align-items: center; */
+}
+.FooterItem a
+{
+    text-decoration: none;
+}
+.MainFooter
+{
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+}
+.Copy
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 2vh;
+}
+.Icons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+.btn{
+padding: 8px 5px 8px 5px;
+border-radius: 10px;
+
+}

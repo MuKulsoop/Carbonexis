@@ -1,16 +1,18 @@
-
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
+import Home from './Pages/Home'
 
-function App() {
 
-  return (
+ function App()
+ {
+  return (    //main HTML
     <>
-      <h1 className=' bg-slate-500 text-center text-7xl'>Welcome Pookies! </h1>
-      <p className=' bg-slate-400 text-center'>It's gonna be hard for you to work without any prior experience</p>
-      <p className=' bg-slate-300 text-center'>That's why your Leader is there so feel free to call out.</p>
-      <p className=' bg-slate-200 text-center'>Let's do our best and do something Innovative</p>
+   <Home />
     </>
   )
-}
+
+ }
 
 export default App
