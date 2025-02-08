@@ -25,7 +25,7 @@ function NavBar()
   </div>
     </nav>
     <div className='MainFooter'>
-  < ul className = "Footer"> <h4>Lift Media</h4>
+  < ul className = "Footer "> <h4>Lift Media</h4>
   <li className = "FooterItem"><a href="#">Pricing</a></li>
   <li className = "FooterItem"><a href="#">Update</a></li>
   <li className = "FooterItem"><a href="#">Beta</a></li>
@@ -34,31 +34,36 @@ function NavBar()
   </ul>
 
 
-  < ul className = "Footer"> <h4>Lift Media</h4>
-  <li className = "FooterItem"><a href="#">Pricing</a></li>
-  <li className = "FooterItem"><a href="#">Update</a></li>
-  <li className = "FooterItem"><a href="#">Beta</a></li>
-  <li className = "FooterItem"><a href="#">Newsletter</a></li>
-  <li className = "FooterItem"><a href="#">Collaborations</a></li>
+  < ul className = "Footer"> <h4>Product</h4>
+  <li className = "FooterItem"><a href="#">Buisness</a></li>
+  <li className = "FooterItem"><a href="#">Designers</a></li>
+  <li className = "FooterItem"><a href="#">Classrooms</a></li>
+  <li className = "FooterItem"><a href="#">Newcomers</a></li>
+
   </ul>
 
 
-  < ul className = "Footer"> <h4>Lift Media</h4>
-  <li className = "FooterItem"><a href="#">Pricing</a></li>
-  <li className = "FooterItem"><a href="#">Update</a></li>
-  <li className = "FooterItem"><a href="#">Beta</a></li>
-  <li className = "FooterItem"><a href="#">Newsletter</a></li>
-  <li className = "FooterItem"><a href="#">Collaborations</a></li>
+  < ul className = "Footer"> <h4>Learning</h4>
+  <li className = "FooterItem"><a href="#">Learn Hub</a></li>
+  <li className = "FooterItem"><a href="#">Manuals</a></li>
+  <li className = "FooterItem"><a href="#">Tutorials</a></li>
+  <li className = "FooterItem"><a href="#">Communities</a></li>
   </ul>
 
 
 
-  < ul className = "Footer"> <h4>Lift Media</h4>
-  <li className = "FooterItem"><a href="#">Pricing</a></li>
-  <li className = "FooterItem"><a href="#">Update</a></li>
-  <li className = "FooterItem"><a href="#">Beta</a></li>
-  <li className = "FooterItem"><a href="#">Newsletter</a></li>
-  <li className = "FooterItem"><a href="#">Collaborations</a></li>
+  < ul className = "Footer"> <h4>Resources</h4>
+  <li className = "FooterItem"><a href="#">Tutorials</a></li>
+  <li className = "FooterItem"><a href="#">Editorials</a></li>
+  <li className = "FooterItem"><a href="#">Product</a></li>
+  <li className = "FooterItem"><a href="#">Newsroom</a></li>
+</ul>
+
+  < ul className = "Footer"> <h4>About</h4>
+  <li className = "FooterItem"><a href="#">Company</a></li>
+  <li className = "FooterItem"><a href="#">Careers</a></li>
+  <li className = "FooterItem"><a href="#">Legal</a></li>
+  <li className = "FooterItem"><a href="#">Help</a></li>
   
     </ul> 
     

@@ -10,7 +10,5 @@ import Home from './Pages/Home'
    <Home />
     </>
   )
-
  }
-
 export default App
