@@ -7,7 +7,7 @@ function NavBar()
     <>       
     
     <nav>
-    <div className="logo"> Strax</div>
+   <img src="STrax.svg" alt="" />
     
     
     < ul className = "NavItems">    

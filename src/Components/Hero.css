@@ -1,0 +1,23 @@
+.Hero
+{
+
+    background-color: #04011C;
+    height: 100vh;
+    color:white;
+
+}
+.Heading{
+
+    width: 35.063rem;
+ height: 18.125rem;
+ flex-shrink: 0;
+font-family: Average;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: 118.5% 56.88px;
+    background: var(--front-text, linear-gradient(109deg, rgba(255, 255, 255, 0.90) 20.22%, rgba(0, 56, 255, 0.89) 143.14%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
