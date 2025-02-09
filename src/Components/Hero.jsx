@@ -27,8 +27,6 @@ function Hero() {
             <img src="" alt="" />
             <img src="" alt="" />
           </div>
-
-         
         </div>
 
       </main>
