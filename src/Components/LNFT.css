@@ -1,6 +1,6 @@
 .NFTSection
 {
-    height: 100vh;
+    height: 150vh;
 }
 .NFTCards {
   display: flex;
@@ -31,10 +31,11 @@
   color: white;
 }
 .card {
+    z-index: -2;
     display: flex;
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
   background-color: white;
   border-radius: 16px;
   align-items: center;
@@ -52,12 +53,23 @@
   align-items: center;
 
 } 
-/* .Description
+.Description
 {
     margin-bottom: 100px;
-} */
-.Image
+}
+.Image-1
 {
+    height: 22.201rem;
+    width: 21.333rem;
+}
+.Image-2
+{
+    height: 22.201rem;
+    width: 21.333rem;
+}
+.Image-3
+
+{ 
     height: 22.201rem;
     width: 21.333rem;
 }

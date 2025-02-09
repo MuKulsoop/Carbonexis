@@ -1,6 +1,7 @@
 import React from "react";
 import "./LNFT.css";
-function LNFT() {
+function LNFT() 
+{
   return (
     <>
     <div className="NFTSection">
@@ -10,7 +11,7 @@ function LNFT() {
       </div>
 <div className="AllCards">
       <div className="card">
-        <img className="Image" src="image 8.png" alt="" />
+        <img className="Image-1" src="image 8.png" alt="" />
         <div className="Description">
           <h3>
             <b>BIOVERSE#666</b>
@@ -18,7 +19,7 @@ function LNFT() {
         </div>
       </div>
       <div className="card">
-        <img className="Image" src="image 8.png" alt="" />
+        <img className="Image-2" src="image.png" alt="" />
         <div className="Description">
           <h3>
             <b>BIOVERSE#666</b>
@@ -26,7 +27,7 @@ function LNFT() {
         </div>
       </div>
       <div className="card">
-        <img className="Image" src="image 8.png" alt="" />
+        <img className="Image-3" src="NFT-3.png" alt="" />
         <div className="Description">
           <h3>
             <b>BIOVERSE#666</b>
@@ -35,7 +36,6 @@ function LNFT() {
       </div>
       </div>
       </div>
-
     </>
   );
 }
