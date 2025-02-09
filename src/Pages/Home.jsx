@@ -8,16 +8,13 @@ import TradeSection from "../Components/TradeSection"
 function Home() {
   return (
     <>
-
-
     <NavBar/>
     <p>Hello From Home Page </p>  
     <Hero />
     <LNFT />
-    <Footer/>
     <TradeSection />
-        
- 
+    <Footer/>
+    
     </>
   )
 }

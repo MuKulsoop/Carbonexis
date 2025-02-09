@@ -1,0 +1,51 @@
+
+.Hero
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        /* width: 19 rem;
+        height: 9 rem; */
+        flex-shrink: 0;
+        font-family: Average;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 118.5% 56.88px;
+        color: white;
+      
+}
+.TradeSection
+{
+    margin: 0px 0px 0px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* width: 20 rem;
+    height: 12 rem;  */
+    font-size: 25px;
+    font-style: normal;
+    /* font-weight: 400; */
+    /* line-height: 118.5% 56.88px; */
+    background: var(
+        --front-text,
+        linear-gradient(
+          109deg,
+          rgba(255, 255, 255, 0.9) 20.22%,
+          rgba(0, 56, 255, 0.89) 143.14%
+        )
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+.Image1
+{
+width: 88vh;
+
+}
+.Trade{
+height: 180vh;
+}
+
