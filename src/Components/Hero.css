@@ -3,7 +3,9 @@
   height: 100vh;
   color: white;
     display: flex;
-     flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
+    
   align-items: start;
 }
 .Heading {
@@ -31,7 +33,7 @@
 }
 
 .Heading2 {
-    margin: 150px 0px 0px 300px;
+    margin: 100px 0px 0px 300px;
     line-height: normal;
   width: 35.063rem;
   height: 18.125rem;
@@ -54,3 +56,9 @@
   -webkit-text-fill-color: transparent;
 }
    
+.Earth
+{
+max-width: 100%;
+max-height: fit-content;
+    
+}

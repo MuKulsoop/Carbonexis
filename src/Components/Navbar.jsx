@@ -1,6 +1,5 @@
 import React from 'react'
 import './Navbar.css'
-// @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Kalam:wght@300;400;700&family=Yatra+One&display=swap')
 function NavBar()
 {
  return (
