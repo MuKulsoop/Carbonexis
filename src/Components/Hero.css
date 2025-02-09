@@ -1,16 +1,15 @@
 .Hero {
   background-color: #04011c;
-  height: 100vh;
+  height: 200vh;
   color: white;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   align-items: start;
 }
 .Heading {
-    margin: 10px 0px 0px 150px;
-    line-height: normal;
+  margin: 10px 0px 0px 150px;
+  line-height: normal;
   width: 35.063rem;
   height: 18 rem;
   flex-shrink: 0;
@@ -31,10 +30,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .Heading2 {
-    margin: 100px 0px 0px 300px;
-    line-height: normal;
+  margin: 100px 0px 0px 300px;
+  line-height: normal;
   width: 35.063rem;
   height: 18.125rem;
   flex-shrink: 0;
@@ -55,10 +53,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-   
-.Earth
-{
-max-width: 100%;
-max-height: fit-content;
-    
+
+.Earth {
+  margin-right: 100px;
+  max-width: 100%;
+  max-height: fit-content;
+}
+.NFT {
+  color: aqua;
 }
