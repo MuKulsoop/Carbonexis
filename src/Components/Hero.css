@@ -2,22 +2,18 @@
   background-color: #04011c;
   height: 100vh;
   color: white;
-  display: flex;
-  
     display: flex;
-    align-items: flex-start; /* Align items at the start (top) */
-    justify-content: space-between; /* Distribute space between elements */
-
+     flex-direction: column;
   align-items: start;
 }
 .Heading {
-    margin: 50px 0px 0px 250px;
+    margin: 10px 0px 0px 150px;
     line-height: normal;
   width: 35.063rem;
-  height: 18.125rem;
+  height: 18 rem;
   flex-shrink: 0;
   font-family: Average;
-  font-size: 48px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 400;
   line-height: 118.5% 56.88px;
@@ -35,14 +31,13 @@
 }
 
 .Heading2 {
-    margin: 300px 0px 0px 0px;
-    /* left: 10%; */
+    margin: 150px 0px 0px 300px;
     line-height: normal;
   width: 35.063rem;
   height: 18.125rem;
   flex-shrink: 0;
   font-family: Average;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 118.5% 56.88px;
@@ -59,11 +54,3 @@
   -webkit-text-fill-color: transparent;
 }
    
-.left {
-    width: 50%; /* Adjust width as needed */
-}
-
-.right {
-    width: 10%; /* Adjust width as needed */
-    text-align: left; /* Align text to the left */
-}
