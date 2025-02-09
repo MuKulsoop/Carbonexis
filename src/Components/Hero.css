@@ -1,23 +1,69 @@
-.Hero
-{
+.Hero {
+  background-color: #04011c;
+  height: 100vh;
+  color: white;
+  display: flex;
+  
+    display: flex;
+    align-items: flex-start; /* Align items at the start (top) */
+    justify-content: space-between; /* Distribute space between elements */
 
-    background-color: #04011C;
-    height: 100vh;
-    color:white;
-
+  align-items: start;
 }
-.Heading{
+.Heading {
+    margin: 50px 0px 0px 250px;
+    line-height: normal;
+  width: 35.063rem;
+  height: 18.125rem;
+  flex-shrink: 0;
+  font-family: Average;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 118.5% 56.88px;
+  background: var(
+    --front-text,
+    linear-gradient(
+      109deg,
+      rgba(255, 255, 255, 0.9) 20.22%,
+      rgba(0, 56, 255, 0.89) 143.14%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    width: 35.063rem;
- height: 18.125rem;
- flex-shrink: 0;
-font-family: Average;
-font-size: 48px;
-font-style: normal;
-font-weight: 400;
-line-height: 118.5% 56.88px;
-    background: var(--front-text, linear-gradient(109deg, rgba(255, 255, 255, 0.90) 20.22%, rgba(0, 56, 255, 0.89) 143.14%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.Heading2 {
+    margin: 300px 0px 0px 0px;
+    /* left: 10%; */
+    line-height: normal;
+  width: 35.063rem;
+  height: 18.125rem;
+  flex-shrink: 0;
+  font-family: Average;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 118.5% 56.88px;
+  background: var(
+    --front-text,
+    linear-gradient(
+      109deg,
+      rgba(255, 255, 255, 0.9) 20.22%,
+      rgba(0, 56, 255, 0.89) 143.14%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+   
+.left {
+    width: 50%; /* Adjust width as needed */
+}
+
+.right {
+    width: 10%; /* Adjust width as needed */
+    text-align: left; /* Align text to the left */
 }
