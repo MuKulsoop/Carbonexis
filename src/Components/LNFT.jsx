@@ -3,6 +3,7 @@ import "./LNFT.css";
 function LNFT() {
   return (
     <>
+    <div className="NFTSection">
       <div className="NFTCards">
         <h3 className="Popular">Most Popular</h3>
         <h3 className="NFT"> NFTs</h3>
@@ -33,6 +34,8 @@ function LNFT() {
         </div>
       </div>
       </div>
+      </div>
+
     </>
   );
 }
