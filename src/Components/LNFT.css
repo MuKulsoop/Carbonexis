@@ -1,12 +1,13 @@
 .NFTSection
 {
-    height: 150vh;
+    height: 92vh;
+    margin-top: 15vh;
 }
 .NFTCards {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 26vh;
+  max-height: 26vh;
 }
 .Popular {
   color: aqua;
