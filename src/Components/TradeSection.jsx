@@ -23,12 +23,17 @@ function TradeSection() {
                 contributions. The future of sustainable trading awaits—
               </b>
             </p>
-            <img className="Image1" src="Trade.png" alt="" />
+          <div className="Button-T">
+              <button ><h2 className="DescriptionOfButton">TRADE NOW</h2> </button>
+              </div>
             </div>
 
-            <div>
-              <button className="Button-T">Trade Now </button>
+
+            <div><img className="Image1" src="Trade.png" alt="" />
             </div>
+           
+
+           
         
         </div>
       </div>

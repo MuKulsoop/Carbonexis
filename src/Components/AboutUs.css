@@ -4,7 +4,8 @@ height: 100vh;
 .ContainerOfAboutUs
 {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+        
 }
 .Heading-AboutUs
 {
@@ -12,11 +13,24 @@ height: 100vh;
   justify-content: center;
   align-items: center;
         font-family: Average;
-        font-size: 40px;
+        font-size: 50px;
         font-style: normal;
+   font-weight: bolder;
         color: white;
         max-height: 100vh;
         margin-bottom: 23px;
+        display: flex;
+        flex-direction: column;
+        background: var(
+            --front-text,
+            linear-gradient(to left,
+              #6EC6FF,
+              #FFFFFF
+            )
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;   
 }
 
 
@@ -32,6 +46,7 @@ height: 100vh;
 }
 .Mission
 {
+    
     text-align: center;
     height: 25vh;
     width: 56vh;
@@ -130,6 +145,7 @@ background-image: linear-gradient(#143A85 , #590040);
 
 }
 
+  
 .WhyUs-H
 {
     color: white;
@@ -141,3 +157,6 @@ background-image: linear-gradient(#143A85 , #590040);
     font-size: 17px;
     line-height: 1.5em;
 }
+
+
+
