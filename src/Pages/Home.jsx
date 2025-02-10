@@ -6,6 +6,7 @@ import LNFT from "../Components/LNFT"
 import TradeSection from "../Components/TradeSection"
 import AboutUs from "../Components/AboutUs"
 import Icon from "../Components/Icon"
+
 function Home() {
   return (
     <>
