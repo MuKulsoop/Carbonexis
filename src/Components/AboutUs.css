@@ -1,0 +1,143 @@
+.AboutUs{
+height: 100vh;
+}
+.ContainerOfAboutUs
+{
+    display: flex;
+    flex-direction: column;    
+}
+.Heading-AboutUs
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+        font-family: Average;
+        font-size: 40px;
+        font-style: normal;
+        color: white;
+        max-height: 100vh;
+        margin-bottom: 23px;
+}
+
+
+
+.Container-R1
+{
+    display: flex;
+ justify-content: space-around;
+ align-items: center;
+ flex-wrap: wrap;
+ flex-direction: row;
+ margin-bottom: 88px;
+}
+.Mission
+{
+    text-align: center;
+    height: 25vh;
+    width: 56vh;
+    color: white;
+float: right;
+padding: 20px;
+text-align: center;
+border-radius: 16px;
+background-image: linear-gradient(#143A85 , #590040);  
+
+}
+
+.Heading-M
+{
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.DescriptionOfMission
+{
+    font-size: 17px;
+    line-height: 1.5em;
+}
+
+.WhatWeDo
+{
+    text-align: center;
+    height: 25vh;
+    width: 56vh;
+    color: white;
+float: right;
+padding: 20px;
+text-align: center;
+border-radius: 16px;
+background-image: linear-gradient(#143A85 , #590040);  
+
+}
+.Heading-WWD
+{
+    color: white;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.DescriptionOfWWD
+{ 
+    font-size: 17px;
+  line-height: 1.5em;
+}
+
+
+.Container-R2
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-wrap: wrap;
+    gap:20px; */
+    flex-direction: row;
+    margin-bottom: 20px
+}
+.OurVision
+{
+    text-align: center;
+    height: 25vh;
+    width: 56vh;
+    color: white;
+float: right;
+padding: 20px;
+text-align: center;
+border-radius: 16px;
+background-image: linear-gradient(#143A85 , #590040);
+}
+.OurVision-H
+{
+    color: white;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.DescriptionOfVision
+{
+    font-size: 17px;
+  line-height: 1.5em;
+}
+
+
+.WhyUs
+{
+    text-align: center;
+    height: 25vh;
+    width: 56vh;
+    color: white;
+float: right;
+padding: 20px;
+text-align: center;
+border-radius: 16px;
+background-image: linear-gradient(#143A85 , #590040);  
+
+}
+
+.WhyUs-H
+{
+    color: white;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+.DescriptionOfWhyUs
+{
+    font-size: 17px;
+    line-height: 1.5em;
+}
