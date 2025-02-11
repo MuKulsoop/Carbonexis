@@ -1,11 +1,16 @@
-.Hero {
-  background-color: #04011c;
-  height: 80vh;
-  color: white;
+.Hero {  
+ 
   display: flex;
-  justify-content: space-around;
+  justify-content:space-around;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
+}
+.HeroDescription
+{
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; */
 }
 .Heading {
   margin: 10px 0px 0px 150px;
@@ -55,10 +60,6 @@
 }
 
 .Earth {
-  margin-right: 100px;
-  max-width: 100%;
-  max-height: fit-content;
+  margin-right: 50px;
 }
-.NFT {
-  color: aqua;
-}
+

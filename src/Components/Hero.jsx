@@ -6,29 +6,26 @@ function Hero() {
     <>
       <main>
         <div className="Hero">
-          <div>
+             <div className="HeroDescription">
+             <div>
             {" "}
             <p className="Heading">
               Empowering Communities through Shared Solar Investment: A
               Blockchain-Based Sustainable Platform
             </p>
-            <br></br>
+            </div>
+            <div>
             <p className="Heading2">
               A community solar sharing platform that enables individuals and
               organizations to invest in solar projects and gain digital
               ownership through NFTs.
             </p>
-          </div>
-          <div>
-            {" "}
-            <img className="Earth " src="Planet Earth.png" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+            </div>
+            </div>
+           <div className="Earth ">
+            <img  src="EarthG.svg" alt="" />
           </div>
         </div>
-
       </main>
     </>
   );

@@ -1,0 +1,42 @@
+.HeadingOfGTH-1
+{
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.HeadingOfGTH-2
+{
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.LineOfGTH-1
+{
+    font-weight: bolder;
+    font-size: 20px;
+}
+.LineOfGTH-2
+{
+    font-weight:lighter;
+    font-size: 20px;
+
+}
+.searchContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(6, 29, 86);
+    max-width: 34em;
+}
+
+.GetInTouchSection{
+    height: 120vh;
+    
+
+}
