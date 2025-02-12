@@ -80,14 +80,11 @@ nav{
     margin-right: 20px;
 height: 2em;
 width: 7em;
-background: linear-gradient(90deg, #aa4d7a, #d400ff);
+
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
      border-radius: 4px;
-     background:  #ea66e64d;
-     /* background-color: 
-    linear-gradient(90deg, #aa4d7a, #d400ff);
-      */
+     background-color: #ffffff14;
   }
   
   .Button-Login:hover {
@@ -118,14 +115,11 @@ background: linear-gradient(90deg, #aa4d7a, #d400ff);
     letter-spacing:1px ;
 height: 2em;
 width: 7em;
-background: linear-gradient(90deg, #aa4d7a, #d400ff);
+/* background: linear-gradient(90deg, #aa4d7a, #d400ff); */
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
      border-radius: 4px;
-     background:  #ea66e64d;
-     /* background-color: 
-    linear-gradient(90deg, #aa4d7a, #d400ff);
-      */
+     background-color: #ffffff14;
   }
   
   .Button-SignUp:hover {

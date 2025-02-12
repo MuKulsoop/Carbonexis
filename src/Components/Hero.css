@@ -62,4 +62,41 @@
 .Earth {
   margin-right: 50px;
 }
+.Button-GetStarted
+{   
+    letter-spacing:1px ;
+height: 2em;
+width: 7em;
+background: linear-gradient(90deg, #aa4d7a, #d400ff);
+     transition-duration: 0.4s;
+     border:0.010rem solid #bb13e9 ; 
+     border-radius: 4px;
+     background:  #ea66e64d;
+     /* background-color: 
+    linear-gradient(90deg, #aa4d7a, #d400ff);
+      */
+  }
+  
+  .Button-GetStarted:hover {
 
+    background: transparent;
+    border-radius: 20px;
+    background-image: 
+    linear-gradient(90deg, #aa4d7a82, #d400ff7b);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
+    color: white;
+
+  }
+  .DescriptionOfButtonOfGetStarted
+  {
+    align-items: center;
+    word-spacing: 12px;
+    color: rgb(193, 188, 188);
+    font-size: 18px;
+    font-weight: bold;
+    font-style:inherit;
+   
+  }
+ 
