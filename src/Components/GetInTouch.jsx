@@ -15,10 +15,16 @@ function GetInTouch()
         <div className="HeadingOfGTH-2">
         <p className="LineOfGTH-2">MAKE YOUR EFFORTS FOR THE GREENER FUTURE WITH US</p>
         </div>
+
         <div className="searchContainer">
-            <p className="Email">Enter Your Email Adress</p>
+            <div className="Email">
+            <p className="Search-Line">Enter Your Email Adress</p>
         </div>
-        
+        </div>
+        <div className="Button-GTH">
+              <button ><h2 className="DescriptionOfButtonOfGTH">Contact Us</h2> </button>
+              </div>
+
         </div>
         </>
     );

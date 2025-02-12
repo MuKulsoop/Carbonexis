@@ -66,40 +66,38 @@ height: 3em;
 width: 17em;
 margin-top: 4em;
 margin-left: 4em;
-     transition-duration: 0.4s;
-     border: #bb13e9 solid; 
-     border-radius: 13px;
+background:  #ea66e64d;
+transition-duration: 0.4s;
+border: #bb13e9 solid; 
+border-radius: 9px;
   }
   
   .Button-T:hover {
-    width: 300px;
-    height: 80px;
+    width: 20;
+    height: 3em;
     background: transparent;
     border-radius: 20px;
-    border: 2px solid transparent;
     background-image: 
-                    linear-gradient(90deg, #aa4d7a, #d400ff);
+    linear-gradient(90deg, #aa4d7a, #d400ff);
     background-origin: border-box;
     background-clip: content-box, border-box;
-    box-shadow: 0 0 15px rgba(255, 0, 124, 0.5), 0 0 30px rgba(212, 0, 255, 0.5);
-
-    /* background-color: #bb13e9;  */
+    box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
     color: white;
   }
   .DescriptionOfButton
   {
+    color: rgb(147, 121, 121);
     font-size: 30px;
     font-weight: bolder;
     font-style: normal;
     background: var(
       --front-text,
       linear-gradient(
-        rgba(226, 9, 187, 0.9) 20.22%,
-        rgba(246, 123, 238, 0.89) 143.14%
+        rgba(239, 237, 239, 0.9) 20.22%,
+        rgba(104, 97, 104, 0.89) 143.14%
       )
     );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  
   }
