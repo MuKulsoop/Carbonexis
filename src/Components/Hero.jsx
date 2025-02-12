@@ -21,6 +21,9 @@ function Hero() {
               ownership through NFTs.
             </p>
             </div>
+            <div className="Button-GetStarted">
+          <button ><h2 className="DescriptionOfButton-GetStarted">SignUp</h2> </button>
+          </div>
             </div>
            <div className="Earth ">
             <img  src="EarthG.svg" alt="" />

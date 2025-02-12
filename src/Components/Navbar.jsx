@@ -27,13 +27,15 @@ function NavBar() {
        </div>
 
         <div className="Buttons">
-          <div className="btn-Login">
-            <button >Login</button>
+        <div className="Button-Login">
+              <button ><h2 className="DescriptionOfButtonOfLogin">Login</h2> </button>
+              </div>
+          <div className="Button-SignUp">
+          <button ><h2 className="DescriptionOfButtonOfSignUp">SignUp</h2> </button>
           </div>
-          <div className="btn-SignUp">
-            {" "}
-            <button >Signup</button>
-          </div>
+          
+            
+          
         </div>
       </nav>
     </>
