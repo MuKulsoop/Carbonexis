@@ -7,14 +7,10 @@ import TradeSection from "../Components/TradeSection"
 import Icon from "../Components/Icon"
 import AboutUs from "../Components/AboutUs"
 import GetInTouch from "../Components/GetInTouch"
-
-
-
 function Home() {
   return (
     <>
-    <NavBar/>
-    <p>Hello From Home Page </p>  
+    <NavBar/> 
     <Hero />
     <LNFT />
     <TradeSection />

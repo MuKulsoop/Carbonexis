@@ -83,12 +83,12 @@ width: 7em;
 
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
-     border-radius: 4px;
+     border-radius: 5px;
      background-color: #ffffff14;
   }
   
   .Button-Login:hover {
-    letter-spacing:2px ;
+    letter-spacing:3.5px ;
     background: transparent;
     border-radius: 20px;
     background-image: 
@@ -118,12 +118,12 @@ width: 7em;
 /* background: linear-gradient(90deg, #aa4d7a, #d400ff); */
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
-     border-radius: 4px;
+     border-radius: 5px;
      background-color: #ffffff14;
   }
   
   .Button-SignUp:hover {
-
+    letter-spacing:3.5px ;
     background: transparent;
     border-radius: 20px;
     background-image: 
