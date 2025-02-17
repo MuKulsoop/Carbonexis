@@ -14,16 +14,18 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    fetch('./projects.json')
+    .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); 
+    }, 3000); // Duration of the loader animation
 
-    // return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <div>
+      <div className='Main'>
       <Router>
         {loading ? (
           <Loader />
