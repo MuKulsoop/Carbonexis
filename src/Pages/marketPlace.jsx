@@ -189,7 +189,6 @@ export default function MarketPlace(){
             tokenSymbol: "SOL",
             tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
         },
-        
     ]}
     return (
         <>

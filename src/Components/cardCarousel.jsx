@@ -4,6 +4,7 @@ import zaCoin from "../static/cardCarousel-temp/zaCoin.jpg"
 import { Card, CardContent } from "@/components/ui/card"
 import { ShoppingCart } from 'lucide-react';
 import './carousel.css'
+
 import {
   Carousel,
   CarouselContent,

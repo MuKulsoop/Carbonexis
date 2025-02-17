@@ -1,50 +1,200 @@
 import React from "react";
 import "./LNFT.css";
+import CardCarousel from "./cardCarousel";
+
 function LNFT() {
+  let trendingInArt = {
+    heading: "Trending in Art", 
+    data: [
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Greenie Weenie #101",
+        nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+        price: 0.013991,
+        tokenSymbol: "ETH",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+]}
+
+
+let trendingInGame = {
+    heading: "Trending in Game", 
+    data: [
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Hello world #105",
+        nftUri: "https://i.ibb.co/YFq27kDV/4b625d2356aa61a0e99387a3286a24d3.png",
+        price: 2.01981,
+        tokenSymbol: "POL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    
+]}
+
+let trendingInMusic = {
+    heading: "Trending in Music", 
+    data: [
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+    {
+        title: "Music is GREAT #231",
+        nftUri: "https://i.ibb.co/VWYLphxP/b35359c422a1e001f79c3b8799a53390.png",
+        price: 0.00025,
+        tokenSymbol: "SOL",
+        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
+    },
+]}
   return (
     <>
-      <div className="NFTSection">
-        <div className="NFTHeadings">
-          <h3 className="Popular">Most Popular</h3>
-          <h3 className="NFT"> NFTs</h3>
-        </div>
-        <div className="AllCards">
+      
+              <h1 className='text-2xl text-white text-center mt-5' >Most Popular Nft</h1>
+              <CardCarousel infoArr={trendingInArt} />
+              <h1 className='ExplorePorjects text-3xl border-2 bg-gradient-to-r from-black via-pink-400 to-white w-[34vh] m-auto rounded-lg p-4 text-white text-center mt-5' >Explore Projects</h1>
 
-
-
-
-          <div class="card-container">
-            <div class="card">
-              <img src="NFT-3.png"></img>
-              <div class="card-content">
-                <h2 class="card-title">BIOVERSE #666</h2>
-                <button class="card-button" onclick="toggleModal(1)">
-                  View
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-{/* 
-          <div className="card">
-            <img className="Image-2" src="image.png" alt="" />
-            <div className="Description">
-              <h3>
-                <b>BIOVERSE#666</b>
-              </h3>
-            </div>
-          </div>
-          <div className="card">
-            <img className="Image-3" src="NFT-3.png" alt="" />
-            <div className="Description">
-              <h3>
-                <b>BIOVERSE#666</b>
-              </h3>
-            </div>
-          </div> */}
-        </div>
-      </div>
+              <CardCarousel infoArr={trendingInMusic} />
     </>
   );
 }
