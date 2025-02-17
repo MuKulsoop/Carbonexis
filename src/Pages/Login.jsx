@@ -111,18 +111,11 @@ export default function LoginPage() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-4 z-50"
           >
-            <div>
-              <p className="text-white text-lg mb-2">
-                Don&apos;t have a account,{" "}
-                <a href="#" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors">
-                  Sign up
-                </a>
-              </p>
-            </div>
+            
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div>
                 <label htmlFor="email" className="block text-white text-lg mb-3">
                   Username
@@ -178,6 +171,14 @@ export default function LoginPage() {
             >
               Sign In
             </motion.button>
+            <div className=" text-center">
+              <p className="text-white text-lg mb-2">
+                Don&apos;t have a account,{" "}
+                <a href="/signup" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors">
+                  Sign up
+                </a>
+              </p>
+            </div>
 
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
