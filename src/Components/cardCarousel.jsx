@@ -28,8 +28,8 @@ export default function CardCarousel(infoArr) {
       <CarouselContent>
         {Array.from(infoArr).map((info, index) => (
           <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
-            <div className="p-1 text-m max-w-[80vw] m-auto card">
-              <Card className = "border-0 cardBG text-white ">
+            <div className="p-1 text-m max-w-[80vw] m-auto">
+              <Card className = "border-0 cardBG text-white">
                 <CardContent className="flex flex-col gap-3 items-center justify-center p-2 ">
                     <img src={info.nftUri} className="carouselCard" alt="" />
                     <div className="content flex flex-col  gap-3 items-center p-3 w-full">
