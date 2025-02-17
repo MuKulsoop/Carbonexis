@@ -1,28 +1,192 @@
-.BChain-H
-{
-    margin-bottom: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin: auto;
+.B-Chain {
+ 
+  height: 115vh;
 }
-.LineOfB-Chain-H
-{
+
+.B-Chain-H {
   display: flex;
-  border-radius: 12px;
   justify-content: center;
   align-items: center;
-        font-family: Average;
-        font-size: 30px;
-        font-style: normal;
-        color: white;
-height: 4rem;
-width: max-content;
-        border: solid 1px;
-        padding: 15px 40px;
+  color: white;
+  width: 44rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  border: solid 1px;
+  padding: 15px 40px;
   border-color: #630a64c9;
   color: white;
   background: #59004055;
-  text-align: center;
+  
 }
+.LineOfB-Chain-H {
+ 
+  font-family: Average;
+  font-size: 30px;
+  font-style: normal;
+  color: white;
+ 
+}
+
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover::before {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+.icon-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Custom gradients for each card */
+.feature-card:nth-child(1) {
+  background: linear-gradient(135deg, rgba(255, 126, 50, 0.1), rgba(255, 126, 50, 0.05));
+}
+
+.feature-card:nth-child(2) {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(147, 51, 234, 0.05));
+}
+
+.feature-card:nth-child(3) {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+}
+
+.feature-card:nth-child(4) {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(234, 179, 8, 0.05));
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* 
+.NFTTreasure {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: radial-gradient(
+    circle,
+    rgba(100, 0, 150, 1) 0%,
+    rgba(50, 0, 100, 1) 100%
+  );
+  background-origin: border-box;
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EmpoweringCarbonCreditExchange {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: radial-gradient(
+    circle,
+    rgba(100, 0, 150, 1) 0%,
+    rgba(50, 0, 100, 1) 100%
+  );
+  background-origin: border-box;
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CommunityHub {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: radial-gradient(
+    circle,
+    rgba(100, 0, 150, 1) 0%,
+    rgba(50, 0, 100, 1) 100%
+  );
+  background-origin: border-box;
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProjectHub {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: radial-gradient(
+    circle,
+    rgba(100, 0, 150, 1) 0%,
+    rgba(50, 0, 100, 1) 100%
+  );
+  background-origin: border-box;
+  box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+} */
