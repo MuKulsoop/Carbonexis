@@ -4,7 +4,7 @@ import "./Navbar.css";
 function NavBar() {
   return (
     <>
-      <nav className=" mb-10">
+      <nav className=" mb-10 z-10">
         <a href="/"><img src="STrax.svg" alt="" /></a>
 
         <div className="allNavItems">
