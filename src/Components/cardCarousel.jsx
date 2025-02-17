@@ -17,7 +17,7 @@ export default function CardCarousel(infoArr) {
     infoArr = infoArr.infoArr.data;
   return (
     <>
-    <p className="text-white pl-12 mt-14 text-2xl" >{heading}</p>
+    <p className="text-white pl-12 mt-14 text-2xl bruceForever" >{heading}</p>
     <Carousel
       opts={{
         align: "start",
@@ -29,21 +29,23 @@ export default function CardCarousel(infoArr) {
           <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
             <div className="p-1 text-m max-w-[80vw] m-auto">
               <Card className = "border-0 cardBG text-white">
-                <CardContent className="flex flex-col gap-3 items-center justify-center p-6 ">
+                <CardContent className="flex flex-col gap-3 items-center justify-center p-2 ">
                     <img src={info.nftUri} className="carouselCard" alt="" />
-                    <div className="flex justify-between w-full items-center">
-                        <div className="flex flex-col gap-3">
-                            <p>
-                                {info.title}
-                            </p>
-                            <p>Price: {info.price} {info.tokenSymbol}</p>
-                        </div>
-                        <img className="w-16 h-16" src={info.tokenLogo} alt="" />
+                    <div className="content flex flex-col  gap-3 items-center p-3 w-full">
+                      <div className="flex justify-between w-full items-center">
+                          <div className="flex flex-col gap-3">
+                              <p>
+                                  {info.title}
+                              </p>
+                              <p>Price: {info.price} {info.tokenSymbol}</p>
+                          </div>
+                          <img className="w-16 h-16" src={info.tokenLogo} alt="" />
+                      </div>
+                      <button className="flex w-11/12 justify-between p-3 buyNowButtom rounded-sm">
+                          <p>BUY NOW</p>
+                          <ShoppingCart />
+                      </button>
                     </div>
-                    <button className="flex w-11/12 justify-between p-3 buyNowButtom rounded-sm">
-                        <p>BUY NOW</p>
-                        <ShoppingCart />
-                    </button>
                   {/* <span className="text-3xl font-semibold">{index + 1}</span> */}
                 </CardContent>
               </Card>
