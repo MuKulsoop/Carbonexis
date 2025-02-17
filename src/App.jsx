@@ -18,11 +18,12 @@ function App() {
       setLoading(false);
     }, 3000); 
 
-    return () => clearTimeout(timer);
+    // return () => clearTimeout(timer);
   }, []);
 
   return (
-    
+    <>
+      <div>
       <Router>
         {loading ? (
           <Loader />
@@ -35,6 +36,9 @@ function App() {
           </Routes>
         )}
       </Router>
+      </div>
+    </>
+      
   );
 }
 
