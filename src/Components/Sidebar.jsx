@@ -123,7 +123,7 @@ const Sidebar = () => {
                   {text}
                   {location.pathname === to && (
                     <motion.div 
-                      className="absolute -right-3 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#DF1CFF] rounded-full"
+                      className="absolute -right-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                     />
