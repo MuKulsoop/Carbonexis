@@ -192,16 +192,17 @@ export default function MarketPlace(){
     ]}
     return (
         <>
-        <NavBar />
+        {/* <NavBar /> */}
         <BannerCarousel />
-        <h1 className='text-2xl text-white text-center mt-5' >Discover This Green NFT World</h1>
+        <h1 className='text-4xl font-bold  text-white text-center mt-5' >Discover This Green NFT World</h1>
+        <hr className='bg-red-800 h-1 border-none w-[20%] text-center m-auto mt-1' />
         <CardCarousel infoArr={trendingInArt} />
         <CardCarousel infoArr={trendingInGame} />
         <CardCarousel infoArr={trendingInMusic} />
 
 
         beech ka maal
-        <Footer />
+        {/* <Footer /> */}
         </>
     )
 }
