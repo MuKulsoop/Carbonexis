@@ -5,6 +5,10 @@ import BannerCarousel from '../Components/bannerCarousel'
 import CardCarousel from '../Components/cardCarousel'
 import './marketPlace.css'
 
+
+
+import NFTInsta from './NFTIntsa'
+
 export default function MarketPlace(){
 
     let trendingInArt = {
