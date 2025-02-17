@@ -22,17 +22,17 @@
   align-items: center;
         font-family: Average;
         font-size: 40px;
-        font-style: normal;
+        /* font-style: normal; */
         color: white;
-height: 5rem;
-width: 26rem;
+   height: 4rem;
+  width: 23rem;
+  margin-bottom: 2vh;
         border: solid 1px;
   border-color: #630a64c9;
-  color: white;
+  color: white; 
   background: #59004055;
   text-align: center;
-  font-weight: bolder;
-    /* ; */
+ 
     font-size: 45px;
 }
 .LineOfGTH-2
@@ -82,12 +82,11 @@ width: 26rem;
     
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 height: 3em;
-width: 17em;
+width: 15em;
 margin-top: 2em;
-
-margin-left: 37em;
+margin-left: 39.5em;
      transition-duration: 0.4s;
      border:2px #bb13e9 solid; 
      border-radius: 9px;
@@ -114,6 +113,7 @@ margin-left: 37em;
   }
   .DescriptionOfButtonOfGTH
   {
+    font-family: Average;
     color: rgb(147, 121, 121);
     font-size: 30px;
     font-weight: bolder;
