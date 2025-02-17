@@ -1,0 +1,28 @@
+.BChain-H
+{
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: auto;
+}
+.LineOfB-Chain-H
+{
+  display: flex;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+        font-family: Average;
+        font-size: 30px;
+        font-style: normal;
+        color: white;
+height: 4rem;
+width: max-content;
+        border: solid 1px;
+        padding: 15px 40px;
+  border-color: #630a64c9;
+  color: white;
+  background: #59004055;
+  text-align: center;
+}
