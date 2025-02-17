@@ -1,0 +1,99 @@
+/* Loader.css */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #0a001f 10%, #02010a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Animated background stars */
+.loader-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('stars.png') repeat;
+    animation: moveStars 20s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes moveStars {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 1000px;
+    }
+}
+
+/* Logo styling */
+.loader-logo img {
+    width: 150px;
+    animation: pulseLogo 3s ease-in-out infinite alternate, fillColor 3s ease-in-out forwards;
+}
+
+@keyframes pulseLogo {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0px 0px 10px #6c00ff);
+    }
+    100% {
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 20px #6c00ff);
+    }
+}
+
+@keyframes fillColor {
+    0% {
+        filter: grayscale(100%);
+    }
+    100% {
+        filter: grayscale(0%);
+    }
+}
+
+/* Progress bar container */
+.loader-progress {
+    width: 180px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing Progress bar */
+.loader-progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #21195c, #09033978, #6c00ff);
+    border-radius: 6px;
+    animation: loadProgress 3s ease-out forwards, neonGlow 1.5s infinite alternate;
+}
+
+@keyframes loadProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 5px #050123;
+    }
+    100% {
+        box-shadow: 0 0 15px #050123;
+    }
+}

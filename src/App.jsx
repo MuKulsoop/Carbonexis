@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import MarketPlace from './Pages/marketPlace'
 import LoginPage from './Pages/Login';
 import SignUpPage from './Pages/SignUp';
+import Loader from './Components/Loader';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); 
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,18 +24,16 @@ function App() {
   return (
     
       <Router>
-        {/* {loading ? (
-          {/* <Loader /> */}
-        {/* ) : ( */}
+        {loading ? (
+          <Loader />
+         ) : (
           <Routes>
             <Route path='/' exact element={<Home />} />
-            {/* <Route path='/login' exact element={<Login />} /> */}
-            {/* <Route path='/signup' exact element={<SignUp />} /> */}
             <Route path='/marketplace' exact element={<MarketPlace />} />
             <Route path='/login' exact element={<LoginPage />} />
             <Route path='/signup' exact element={<SignUpPage />} />
           </Routes>
-        {/* )} */}
+        )}
       </Router>
   );
 }
