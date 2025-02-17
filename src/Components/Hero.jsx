@@ -4,35 +4,10 @@ import { ArrowRight } from "lucide-react";
 function Hero() {
   return (
     <>
+    
       <main>
         <div className="Hero">
-          <div className="HeroDescription">
-            <div className="Heading-1">
-              <p className="DescriptionOfHeading-1">
-                Empowering Communities through Shared Solar Investment: A
-                Blockchain-Based Sustainable Platform
-              </p>
-            </div>
-            <div className="Heading-2All">
-              <div className="Heading-2">
-                <p className="DescriptionOfHeading-2">
-                  A community solar sharing platform that enables individuals
-                  and organizations to invest in solar projects and gain digital
-                  ownership through NFTs.
-                </p>
-              </div>
-              <div className="Button-GetStarted">
-                <button>
-                  <h2 className="DescriptionOfButtonGetStarted">Get Started</h2>{" "}
-                </button>
-              </div>
-                <img src="Wavy.png" alt=""  className=" absolute mt-96 ml-28" />
-              
-            </div>
-          </div>
-          <div className="Earth ">
-            <img src="EarthG.svg" alt="" />
-            <div className="EarthBottomText">
+        <div className="EarthBottomText absolute mt-[25rem] ml-[72vw]">
               <div className="content">
                 <h3 className="HeadingOfEarthBottomText">
                   Solar Project Support
@@ -80,11 +55,41 @@ function Hero() {
                 </div>
               </div>
             </div>
+          <div className="HeroDescription">
+            <div className="Heading-1 -mt-80">
+              <p className="DescriptionOfHeading-1">
+                Empowering Communities through Shared Solar Investment: A
+                Blockchain-Based Sustainable Platform
+              </p>
+            </div>
+            <div className="Heading-2All">
+              <div className="Heading-2">
+                <p className="DescriptionOfHeading-2">
+                  A community solar sharing platform that enables individuals
+                  and organizations to invest in solar projects and gain digital
+                  ownership through NFTs.
+                </p>
+              </div>
+              <div className="Button-GetStarted">
+                <button>
+                  <h2 className="DescriptionOfButtonGetStarted">Get Started</h2>{" "}
+                </button>
+              </div>
+                <img src="Wavy.png" alt=""  className=" absolute mt-96 ml-28" />
+              
+            </div>
           </div>
+          <div className="Earth mt-6 ">
+            <img src="EarthG.svg" alt="" className=" -mt-80"/>
+            
+          </div>
+          
         </div>
+        
 
         {/* </div> */}
       </main>
+      
     </>
   );
 }

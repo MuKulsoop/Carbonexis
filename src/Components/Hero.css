@@ -160,11 +160,8 @@ width: 13em;
 }
 .EarthBottomText
 {
- 
   z-index: 1;
- border: white 4px solid;
- height: 30vh;
- margin: 0px 0px 10px 295px ;
+ height: 37vh;
   border-top-left-radius: 30px;
  background: #ffffff14;
   display: flex;
