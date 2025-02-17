@@ -1,28 +1,26 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <>
       <nav className=" mb-10 z-10">
-        <a href="/"><img src="STrax.svg" alt="" /></a>
+        <Link to="/"><img src="STrax.svg" alt="" /></Link>
 
         <div className="allNavItems">
           <ul className="NavItems">
             <li className="NavItem">
-              <a href="#">Home</a>
+              <Link to="#">Home</Link>
             </li>
             <li className="NavItem">
-              <a href="#">Projects</a>
+              <Link to="/marketplace">Marketplace</Link>
             </li>
             <li className="NavItem">
-              <a href="/marketplace">Marketplace</a>
+              <Link to="/Projects">Projects</Link>
             </li>
             <li className="NavItem">
-              <a href="/Projects">Projects</a>
-            </li>
-            <li className="NavItem">
-              <a href="#">Blogs</a>
+              <Link to="#">Blogs</Link>
             </li>
           </ul>
         </div>
@@ -31,14 +29,14 @@ function NavBar() {
         <button>
           <div className="Button-Login">
            
-              <a href="/login"><h2 className="DescriptionOfButtonOfLogin">Login</h2>{" "}</a>
+              <Link to="/login"><h2 className="DescriptionOfButtonOfLogin">Login</h2>{" "}</Link>
             
           </div>
           </button>
           <button>
           <div className="Button-SignUp">
             
-              <a href="/signup"><h2 className="DescriptionOfButtonOfSignUp">SignUp</h2>{" "}</a>
+              <Link to="/signup"><h2 className="DescriptionOfButtonOfSignUp">SignUp</h2>{" "}</Link>
          
           </div>
           </button>

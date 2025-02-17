@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Eye, EyeOff, Home } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -51,15 +52,15 @@ export default function LoginPage() {
 
       {/* Navigation
       <nav className="absolute top-0 right-0 p-6 flex gap-8 items-center">
-        <a href="/" className="text-white/80 hover:text-white transition-colors">
+        <Link to="/" className="text-white/80 hover:text-white transition-colors">
           <Home className="w-5 h-5" />
-        </a>
-        <a href="#" className="text-white/80 hover:text-white transition-colors">
+        </Link>
+        <Link to="#" className="text-white/80 hover:text-white transition-colors">
           Help
-        </a>
-        <a href="#" className="text-white/80 hover:text-white transition-colors">
+        </Link>
+        <Link to="#" className="text-white/80 hover:text-white transition-colors">
           Contact us
-        </a>
+        </Link>
       </nav> */}
 
       {/* Main Content */}
@@ -159,9 +160,9 @@ export default function LoginPage() {
                 </motion.div>
                 <span className="text-white text-lg group-hover:text-white/90 transition-colors">Remember me</span>
               </label>
-              <a href="#" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors text-lg">
+              <Link to="#" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors text-lg">
                 Forget password?
-              </a>
+              </Link>
             </div>
 
             <motion.button
@@ -174,9 +175,9 @@ export default function LoginPage() {
             <div className=" text-center">
               <p className="text-white text-lg mb-2">
                 Don&apos;t have a account,{" "}
-                <a href="/signup" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors">
+                <Link to="/signup" className="text-[#8BA4FF] hover:text-[#9FB5FF] transition-colors">
                   Sign up
-                </a>
+                </Link>
               </p>
             </div>
 
