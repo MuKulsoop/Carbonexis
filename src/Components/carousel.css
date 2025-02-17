@@ -66,3 +66,16 @@
     filter: blur(7px);
     z-index: 10;
 }
+
+
+/* custom fonts */
+
+
+@font-face {
+    font-family: 'BruceForever';
+    src: url('../../public/fonts/BruceForeverRegular.ttf');
+}
+
+.bruceForever{
+    font-family: 'BruceForever', sans-serif;
+}

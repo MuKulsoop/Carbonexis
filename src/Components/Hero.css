@@ -1,5 +1,5 @@
 .Hero {  
- height: 120vh;
+ height: 130vh;
   display: flex;
   justify-content:space-around;
   flex-direction: row;
@@ -165,7 +165,7 @@ width: 13em;
  
   z-index: 1;
  border: white 4px solid;
- height: 24vh;
+ height: 30vh;
  margin: 0px 0px 10px 295px ;
   border-top-left-radius: 30px;
  background: #ffffff14;
@@ -176,22 +176,42 @@ flex-direction: column;
 }
 .HeadingOfEarthBottomText
 {
-font-weight: 700;
+font-weight: 800;
+/* width: 318.443px; */
+/* height: 36px; */
+flex-shrink: 0;
 color: white;
-margin-bottom: 5px;
-margin-right: 38px;
+text-align: center;
+margin-bottom: 3px;
+
 }
-.DescriptionOfEarthBottomText
-{
+
+.content{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+.DescriptionOfEarthBottomText
+{
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
   color: white;
   align-items: center;
+  text-align: left;
+  
+  /* margin-left: 90px;
+  margin-right: 90px;
+  margin-bottom: 7px; */
 }
 .DiscoverMore
 {
  color: rgb(47, 255, 50);
  font-size: 22px;
- margin-left: -50px;
+text-align: center;
+ margin-top: 5px;
 }
