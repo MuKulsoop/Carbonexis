@@ -3,6 +3,7 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import Home from './Pages/Home'
 import MarketPlace from './Pages/marketPlace'
+import LoginPage from './Pages/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -29,6 +30,7 @@ function App() {
             {/* <Route path='/login' exact element={<Login />} /> */}
             {/* <Route path='/signup' exact element={<SignUp />} /> */}
             <Route path='/marketplace' exact element={<MarketPlace />} />
+            <Route path='/login' exact element={<LoginPage />} />
           </Routes>
         {/* )} */}
       </Router>
