@@ -1,14 +1,31 @@
 .NFTSection
 {
-    height: 200vh;
+    height: 225vh;
     margin-top: 15vh;
 }
 .NFTHeadings {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
+  /* border: solid 1px;
+  border-color: aqua; */
+  color: white;
+  background: #5900401c;
+  text-align: center;
+  font-weight: bold;
+}
+.ExploreProjects
+{ border: solid 1px;
+  border-color: #630a64c9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  background: #59004055;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15vh;
+  margin-bottom: 9vh;
 }
 
 .Popular {
@@ -105,12 +122,4 @@ text-align: center;
   box-shadow: 0 0 40px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
   letter-spacing: 4px;
   border-radius: 8px;
-}
-.ExploreProjects
-{
-  color: white;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
 }

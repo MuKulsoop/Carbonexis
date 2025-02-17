@@ -209,13 +209,13 @@ function LNFT() {
   return (
     <>
     <div className="NFTSection">
-    <div className="NFTHeadings">
+    <div className="NFTHeadings text-3xl bg-gradient-to-b from-#E50AA7 to-#FF17BD00 w-[37vh] m-auto rounded-lg p-4 text-white text-center mt-5">
       <h4 className="Popular">Most Popular</h4>
       <h4 className="NFT">NFT</h4>
       </div>
-      
+
       <CardCarousel infoArr={trendingInArt} />
-      <h1 className="ExploreProjects text-3xl border-2 bg-gradient-to-b from-#E50AA7 to-#FF17BD00 w-[37vh] m-auto rounded-lg p-4 text-white text-center mt-5">
+      <h1 className="ExploreProjects text-3xl bg-gradient-to-b from-#E50AA7 to-#FF17BD00 w-[37vh] m-auto rounded-lg p-4 text-white text-center mt-5">
         Explore Projects
       </h1>
 
