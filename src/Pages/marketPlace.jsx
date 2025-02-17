@@ -3,6 +3,7 @@ import NavBar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import BannerCarousel from '../Components/bannerCarousel'
 import CardCarousel from '../Components/cardCarousel'
+import './marketPlace.css'
 
 export default function MarketPlace(){
 
@@ -194,8 +195,8 @@ export default function MarketPlace(){
         <>
         {/* <NavBar /> */}
         <BannerCarousel />
-        <h1 className='text-4xl font-bold  text-white text-center mt-5' >Discover This Green NFT World</h1>
-        <hr className='bg-red-800 h-1 border-none w-[20%] text-center m-auto mt-1' />
+        <h1 className='text-4xl font-bold  text-white text-center mt-5 max-md:text-2xl' >Discover This Green NFT World</h1>
+        <hr className='bg-red-500 h-1 border-none w-[20%] text-center m-auto mt-1 min-w-[150px]' />
         <CardCarousel infoArr={trendingInArt} />
         <CardCarousel infoArr={trendingInGame} />
         <CardCarousel infoArr={trendingInMusic} />
