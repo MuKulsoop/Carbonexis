@@ -13,7 +13,6 @@ function Hero() {
                 Blockchain-Based Sustainable Platform
               </p>
             </div>
-
             <div className="Heading-2All">
               <div className="Heading-2">
                 <p className="DescriptionOfHeading-2">
@@ -27,9 +26,8 @@ function Hero() {
                   <h2 className="DescriptionOfButtonGetStarted">Get Started</h2>{" "}
                 </button>
               </div>
-              <div className="Wavy ">
-                <img src="Wavy.png" alt="" />
-              </div>
+                <img src="Wavy.png" alt=""  className=" absolute mt-96 ml-28" />
+              
             </div>
           </div>
           <div className="Earth ">

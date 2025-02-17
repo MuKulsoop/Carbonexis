@@ -14,8 +14,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('./projects.json')
-    .finally(() => setLoading(false));
+    // fetch('./projects.json')
+    // .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000); // Duration of the loader animation

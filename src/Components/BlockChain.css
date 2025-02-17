@@ -1,6 +1,7 @@
 .B-Chain {
  
-  height: 96vh;
+  height: 100vh;
+  margin-bottom: 5vh;
 }
 
 .B-Chain-H {
@@ -40,14 +41,14 @@
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 35px 60px;
 }
 
 .feature-card {
   position: relative;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
   border-radius: 16px;
-  padding: 32px;
+  padding: 40px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   overflow: hidden;
