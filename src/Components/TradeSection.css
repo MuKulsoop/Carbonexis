@@ -1,14 +1,16 @@
 
 .Heading-T
 {
+/* padding:13px; */
   display: flex;
+  border-radius: 12px;
   justify-content: center;
   align-items: center;
         font-family: Average;
         font-size: 40px;
         font-style: normal;
         color: white;
-     
+     width: 32vw;
         border: solid 1px;
   border-color: #630a64c9;
   color: white;
@@ -46,10 +48,12 @@ height: 85vh;
 {
 width: 115vh;
 margin-bottom:22px ;
+margin-left: 52px;
 
 
 }
 .Trade{
+
 height: 115vh;
 display: flex;
 align-items: center;
@@ -59,7 +63,7 @@ flex-direction: column;
 .Description-T
 {
 
-  max-width: 60vh;
+width: 60vh;
   font-size: 25px;
   font-style: normal;
   background: var(
@@ -81,13 +85,14 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
 height: 3em;
-width: 17em;
+width: 20em;
 margin-top: 4em;
-margin-left: 4em;
-background:  #04011C;
+margin-left: 1em;
+background-color: #ffffff14;
 transition-duration: 0.4s;
 border: #bb13e9 solid; 
-border-radius: 9px;
+border-radius: 20px;
+
   }
   
   .Button-T:hover {
@@ -95,7 +100,7 @@ border-radius: 9px;
     height: 3em;
     letter-spacing:3.5px ;
     background: transparent;
-    border-radius: 20px;
+    border-radius: 9px;
     background-image: 
     linear-gradient(90deg, #aa4d7a82, #d400ff7b);
     background-origin: border-box;

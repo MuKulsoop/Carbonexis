@@ -9,7 +9,7 @@ function GetInTouch()
 
 
 
-        <div className="HeadingOfGTH-1">
+        <div className="HeadingOfGTH-1 text-3xl bg-gradient-to-b from-#E50AA7 to-#FF17BD00 m-auto rounded-lg p-4 text-white text-center mt-5">
         <p className="LineOfGTH-1"> Get in Touch</p>
         </div>
         <div className="HeadingOfGTH-2">
@@ -18,7 +18,7 @@ function GetInTouch()
 
         <div className="searchContainer">
             <div className="Email">
-            <p className="Search-Line">Enter Your Email Adress</p>
+            <p className="Search-Line">Enter Your Email Address....</p>
         </div>
         </div>
         <div className="Button-GTH">

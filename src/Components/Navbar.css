@@ -39,7 +39,7 @@ nav{
 .NavItem a:hover
 {
     color: rgb(156, 156, 190);
-    font-weight: bolder;
+    
 }
 .NavItems 
 {   
@@ -60,11 +60,11 @@ nav{
 
 .allNavItems
 {
-    margin-left: em;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .Buttons
@@ -72,7 +72,6 @@ nav{
    
     display: flex;
     justify-content: space-around;
-
     align-items: center;
 }
 .Button-Login
@@ -80,18 +79,18 @@ nav{
     letter-spacing:1px ;
     margin-right: 20px;
 height: 2em;
-width: 7em;
-
+width: 8em;
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
-     border-radius: 5px;
+     
+     border-radius: 20px;
      background-color: #ffffff14;
   }
   
   .Button-Login:hover {
     letter-spacing:3.5px ;
     background: transparent;
-    border-radius: 20px;
+    border-radius: 5px;
     background-image: 
     linear-gradient(90deg, #aa4d7a82, #d400ff7b);
     background-origin: border-box;
@@ -115,18 +114,19 @@ width: 7em;
 {   
     letter-spacing:1px ;
 height: 2em;
-width: 7em;
+width: 8em;
 /* background: linear-gradient(90deg, #aa4d7a, #d400ff); */
      transition-duration: 0.4s;
      border:0.010rem solid #bb13e9 ; 
-     border-radius: 5px;
+     border-radius: 20px;
      background-color: #ffffff14;
   }
   
   .Button-SignUp:hover {
+    border-radius: 5px;
     letter-spacing:3.5px ;
     background: transparent;
-    border-radius: 20px;
+   
     background-image: 
     linear-gradient(90deg, #aa4d7a82, #d400ff7b);
     background-origin: border-box;

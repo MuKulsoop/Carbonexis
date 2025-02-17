@@ -4,7 +4,7 @@ function AboutUs() {
   return (
     <>
       <div className="AboutUs">
-        <div className="Heading-AboutUs">
+        <div className="Heading-AboutUs text-3xl bg-gradient-to-b from-#E50AA7 to-#FF17BD00 w-[37vh] m-auto rounded-lg p-4 text-white text-center mt-5">
           <h3>About Us</h3>
         </div>
         <div className="ContainerOfAboutUs">

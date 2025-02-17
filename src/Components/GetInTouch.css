@@ -1,6 +1,6 @@
 .HeadingOfGTH-1
 {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +16,22 @@
 }
 .LineOfGTH-1
 {
+  display: flex;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+        font-family: Average;
+        font-size: 40px;
+        font-style: normal;
+        color: white;
+height: 5rem;
+width: 26rem;
+        border: solid 1px;
+  border-color: #630a64c9;
+  color: white;
+  background: #59004055;
+  text-align: center;
+  font-weight: bold;
     font-weight: lighter;
     font-size: 60px;
 }
@@ -55,7 +71,7 @@
 
 
 .GetInTouchSection{
-    height: 70vh;
+    height: 60vh;
     
 
 }
@@ -69,24 +85,27 @@
   align-items: center;
 height: 3em;
 width: 17em;
-margin-top: 5em;
-background: linear-gradient(90deg, #aa4d7a, #d400ff);
+margin-top: 2em;
+
 margin-left: 37em;
      transition-duration: 0.4s;
      border: #bb13e9 solid; 
      border-radius: 9px;
-     background-color: 
-    linear-gradient(90deg, #aa4d7a, #d400ff);
+     background-color: #d265ba14;
+     transition-duration: 0.4s;
+     border: #bb13e9 solid; 
+     border-radius: 20px;
      
   }
   
   .Button-GTH:hover {
     width: 20;
     height: 3em;
+    letter-spacing:3.5px ;
     background: transparent;
-    border-radius: 20px;
+    border-radius: 9px;
     background-image: 
-    linear-gradient(90deg, #aa4d7a, #d400ff);
+    linear-gradient(90deg, #aa4d7a82, #d400ff7b);
     background-origin: border-box;
     background-clip: content-box, border-box;
     box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);

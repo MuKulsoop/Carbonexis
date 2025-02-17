@@ -19,7 +19,7 @@ function NavBar() {
               <a href="/marketplace">Marketplace</a>
             </li>
             <li className="NavItem">
-              <a href="/marketplace">Marketplace</a>
+              <a href="/Projects">Projects</a>
             </li>
             <li className="NavItem">
               <a href="#">Blogs</a>
@@ -28,16 +28,20 @@ function NavBar() {
         </div>
 
         <div className="Buttons">
+        <button>
           <div className="Button-Login">
-            <button>
+           
               <a href="/login"><h2 className="DescriptionOfButtonOfLogin">Login</h2>{" "}</a>
-            </button>
+            
           </div>
+          </button>
+          <button>
           <div className="Button-SignUp">
-            <button>
+            
               <a href="/signup"><h2 className="DescriptionOfButtonOfSignUp">SignUp</h2>{" "}</a>
-            </button>
+         
           </div>
+          </button>
         </div>
       </nav>
     </>
