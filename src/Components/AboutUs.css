@@ -1,11 +1,14 @@
 .AboutUs{
 height: 100vh;
 }
-.ContainerOfAboutUs
+
+.AboutUsFlex
 {
     display: flex;
-    flex-direction: column;
-        
+    align-items: center;
+    justify-content: space-evenly;
+   /* flex-wrap:inherit; */
+   
 }
 .Heading-AboutUs
 {
@@ -40,120 +43,62 @@ height: 100vh;
 }
 .Mission
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-min-height: 145px;
-    width: 56vh;
-    color: white;
-float: right;
-height: 25vh;
-text-align: center;
-border-radius: 6px;
-background-image: 
-linear-gradient(90deg, #aa4d7a82, #d400ff7b);
+border: 1px solid rgba(255, 255, 255, 0.2);
+background: radial-gradient(circle, rgba(100,0,150,1) 0%, rgba(50,0,100,1) 100%);
 background-origin: border-box;
-background-clip: content-box, border-box;
-box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
+box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
 color: white;
-}
-
-.Heading-M
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding:1.65rem; */
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-.DescriptionOfMission
-{
-    font-size: 17px;
-    line-height: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .WhatWeDo
-{display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 25vh;
-    width: 56vh;
-    color: white;
-float: right;
-margin-bottom: 12px;
-text-align: center;
-border-radius: 16px;
-background-image: 
-linear-gradient(90deg, #aa4d7a82, #d400ff7b);
+{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+background: radial-gradient(circle, rgba(100,0,150,1) 0%, rgba(50,0,100,1) 100%);
 background-origin: border-box;
-background-clip: content-box, border-box;
-box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
+box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
 color: white;
 }
-.Heading-WWD
+
+.OurVision
+{ border: 1px solid rgba(255, 255, 255, 0.2);
+    background: radial-gradient(circle, rgba(100,0,150,1) 0%, rgba(50,0,100,1) 100%);
+    background-origin: border-box;
+    box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+    color: white;
+}
+
+.WhyUs
+{ border: 1px solid rgba(255, 255, 255, 0.2);
+    background: radial-gradient(circle, rgba(100,0,150,1) 0%, rgba(50,0,100,1) 100%);
+    background-origin: border-box;
+    box-shadow: 0 0 20px rgba(192, 0, 255, 0.6);
+    color: white;
+}
+
+/*   
+.WhyUs-H
 {
     display: flex;
     align-items: center;
     justify-content: center;
     /* padding:1.65rem; */
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    /* font-size: 1.5rem;
+     margin-bottom: 15px;
     font-weight: bold;
 }
-.DescriptionOfWWD
-{ 
-    font-size: 17px;
-  line-height: 1.5em;
-}
-
-
-.Container-R2
+.DescriptionOfWhyUs
 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* flex-wrap: wrap;
-    gap:20px; */
-    flex-direction: row;
-    /* margin-bottom: 20px */
+    font-size: 17px;
+    line-height: 1.5em;
 }
-.OurVision
-{display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 25vh;
-    width: 56vh;
-    color: white;
-float: right;
-margin-bottom: 12px;
-text-align: center;
-border-radius: 16px;
-background-image: 
-linear-gradient(90deg, #aa4d7a82, #d400ff7b);
-background-origin: border-box;
-background-clip: content-box, border-box;
-box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
-color: white;
-}
+
 .OurVision-H
 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     /* padding:1.65rem; */
-    font-size: 1.5rem;
+    /* font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: bold;
 }
@@ -164,43 +109,42 @@ color: white;
 }
 
 
-.WhyUs
-{display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 25vh;
-    width: 56vh;
-    color: white;
-float: right;
-margin-bottom: 12px;
-text-align: center;
-border-radius: 16px;
-background-image: 
-linear-gradient(90deg, #aa4d7a82, #d400ff7b);
-background-origin: border-box;
-background-clip: content-box, border-box;
-box-shadow: 0 0 15px rgba(255, 0, 123, 0.349), 0 0 30px rgba(212, 0, 255, 0.333);
-color: white;
-}
 
-  
-.WhyUs-H
+
+.Heading-WWD
+{
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* padding:1.65rem; */
+    /* font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.DescriptionOfWWD
+{ 
+    font-size: 17px;
+  line-height: 1.5em;
+} */
+
+
+
+/* .Heading-M
 {
     display: flex;
     align-items: center;
     justify-content: center;
     /* padding:1.65rem; */
-    font-size: 1.5rem;
-     margin-bottom: 15px;
+    /* font-size: 1.5rem;
+    margin-bottom: 15px;
     font-weight: bold;
-}
-.DescriptionOfWhyUs
+} */
+/* .DescriptionOfMission
 {
     font-size: 17px;
     line-height: 1.5em;
-}
-
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}  */
