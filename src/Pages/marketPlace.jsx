@@ -193,7 +193,7 @@ export default function MarketPlace(){
     ]}
     return (
         <>
-        {/* <NavBar /> */}
+        <NavBar />
         <BannerCarousel />
         <h1 className='text-4xl font-bold  text-white text-center mt-5 max-md:text-2xl' >Discover This Green NFT World</h1>
         <hr className='bg-red-500 h-1 border-none w-[20%] text-center m-auto mt-1 min-w-[150px]' />
@@ -203,7 +203,7 @@ export default function MarketPlace(){
 
 
         beech ka maal
-        {/* <Footer /> */}
+        <Footer />
         </>
     )
 }
