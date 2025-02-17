@@ -29,7 +29,7 @@ export default function BannerCarousel() {
 
   return (
     <div className="relative">
-      <Carousel className="m-auto" onSelect={handleSlideChange}>
+      <Carousel className="m-auto max-w-[90vw]" onSelect={handleSlideChange}>
         <CarouselContent>
           {Array.from(bannerImages).map((_, index) => (
             <CarouselItem key={index}>
@@ -43,7 +43,7 @@ export default function BannerCarousel() {
                 >
                   <div className="relative z-20 flex justify-center items-center h-full">
                     <img 
-                      className="max-h-[90vh] w-auto h-auto object-contain max-w-full" 
+                      className="max-h-[80vh] w-auto h-auto object-contain max-w-full" 
                       src={bannerImages[currentIndex]} 
                       alt="" 
                     />
