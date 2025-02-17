@@ -30,12 +30,12 @@ function NavBar() {
         <div className="Buttons">
           <div className="Button-Login">
             <button>
-              <h2 className="DescriptionOfButtonOfLogin">Login</h2>{" "}
+              <a href="/login"><h2 className="DescriptionOfButtonOfLogin">Login</h2>{" "}</a>
             </button>
           </div>
           <div className="Button-SignUp">
             <button>
-              <h2 className="DescriptionOfButtonOfSignUp">SignUp</h2>{" "}
+              <a href="/signup"><h2 className="DescriptionOfButtonOfSignUp">SignUp</h2>{" "}</a>
             </button>
           </div>
         </div>
