@@ -9,6 +9,7 @@ import Loader from './Components/Loader';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './Pages/Projects';
 import ProjectCreatePage from './Pages/CreateProject';
+import NFTInsta from './Pages/NFTIntsa';
 
 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path='/signup' exact element={<SignUpPage />} />
             <Route path='/Projects' exact element={<Projects />} />
             <Route path='/Projects/create' exact element={<ProjectCreatePage />} />
+            <Route path='/instaNFT' exact element={<NFTInsta />} />
           </Routes>
         )}
       </Router>

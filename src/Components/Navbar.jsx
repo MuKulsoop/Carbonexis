@@ -17,6 +17,9 @@ function NavBar() {
               <Link to="/marketplace">Marketplace</Link>
             </li>
             <li className="NavItem">
+              <Link to="/instaNFT">NFTInsta</Link>
+            </li>
+            <li className="NavItem">
               <Link to="/Projects">Projects</Link>
             </li>
             <li className="NavItem">
