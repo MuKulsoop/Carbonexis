@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './Pages/Projects';
 import ProjectCreatePage from './Pages/CreateProject';
 import NFTInsta from './Pages/NFTIntsa';
+import UserDashboard from './Pages/Dashboard';
+import OrganizationDashboard from './Pages/OrgDashboard';
 
 
 
@@ -40,7 +42,8 @@ function App() {
             <Route path='/signup' exact element={<SignUpPage />} />
             <Route path='/Projects' exact element={<Projects />} />
             <Route path='/Projects/create' exact element={<ProjectCreatePage />} />
-            <Route path='/instaNFT' exact element={<NFTInsta />} />
+            <Route path='/nftinsta' exact element={<NFTInsta />} />
+            <Route path='/dashboard' exact element={<OrganizationDashboard />} />
           </Routes>
         )}
       </Router>

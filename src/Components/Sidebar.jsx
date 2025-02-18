@@ -64,7 +64,7 @@ const Sidebar = () => {
               <motion.span 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#DF1CFF] to-[#130582] text-3xl font-bold ml-2"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-[#DF1CFF] to-[#130582] text-3xl font-bold ml-2 kalnia-glaze"
               >
                 CXIS
               </motion.span>

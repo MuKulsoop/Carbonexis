@@ -4,7 +4,7 @@ import {Facebook, InstagramIcon,  TwitterIcon, } from "lucide-react";
 function Footer() {
   return (
     <>
-      <footer>
+      <footer className=" mt-14">
         <div className="MainFooter">
           <ul className="Footer">
             {" "}
