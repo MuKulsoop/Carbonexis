@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 // User routes
-router.post("/register", registerUser); // Register a new user
+router.post("/signup", registerUser); // Register a new user
 router.post("/login", loginUser); // Login with walletAddress
 router.put("/update-profile", updateProfile); // Update profile details
 router.post("/verify-kyc", verifyKYC); // Admin KYC verification

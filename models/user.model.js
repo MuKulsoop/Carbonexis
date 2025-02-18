@@ -4,9 +4,7 @@ const UserSchema = new mongoose.Schema(
   {
     walletAddress: {
       type: String,
-      required: true,
-      unique: true,
-      index: true,
+      default: '',
     },
     username: {
       type: String,
@@ -21,13 +19,18 @@ const UserSchema = new mongoose.Schema(
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, "Invalid email format"],
     },
+    password:{
+      type: String,
+      required: true
+    }
+    ,
     profileImage: {
       type: String,
       default: "",
     },
     role: {
       type: String,
-      enum: ["User", "ProjectOwner", "Validator", "Admin"],
+      enum: ["User", "Organization", "Validator", "Admin"],
       default: "User",
     },
     kycVerified: {
