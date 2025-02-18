@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './Pages/Projects';
 import ProjectCreatePage from './Pages/CreateProject';
 import NFTInsta from './Pages/NFTIntsa';
-import GamingUI from './Pages/nftthemed';
 
 
 
