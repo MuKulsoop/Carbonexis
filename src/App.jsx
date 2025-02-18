@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './Pages/Projects';
 import ProjectCreatePage from './Pages/CreateProject';
 import NFTInsta from './Pages/NFTIntsa';
+import GamingUI from './Pages/nftthemed';
 
 
 
@@ -21,7 +22,7 @@ function App() {
     // .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Duration of the loader animation
+    }, 1); // Duration of the loader animation
 
     return () => clearTimeout(timer);
   }, []);
