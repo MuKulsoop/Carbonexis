@@ -23,7 +23,7 @@ function App() {
     // .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Duration of the loader animation
+    }, 1); // Duration of the loader animation
 
     return () => clearTimeout(timer);
   }, []);
