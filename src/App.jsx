@@ -12,6 +12,7 @@ import ProjectCreatePage from './Pages/CreateProject';
 import NFTInsta from './Pages/NFTIntsa';
 import UserDashboard from './Pages/Dashboard';
 import OrganizationDashboard from './Pages/OrgDashboard';
+import ProjectList from './Pages/projectsList';
 
 
 
@@ -42,8 +43,7 @@ function App() {
             <Route path='/signup' exact element={<SignUpPage />} />
             <Route path='/Projects' exact element={<Projects />} />
             <Route path='/Projects/create' exact element={<ProjectCreatePage />} />
-            <Route path='/nftinsta' exact element={<NFTInsta />} />
-            <Route path='/dashboard' exact element={<OrganizationDashboard />} />
+            <Route path='/instaNFT' exact element={<NFTInsta />} />
           </Routes>
         )}
       </Router>
