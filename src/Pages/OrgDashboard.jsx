@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { Building2, Leaf, Globe2, Wallet, Dock, Activity, Sun, Plus, Edit2, BarChart3, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import NavBar from '@/Components/Navbar';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -82,11 +83,12 @@ const OrganizationDashboard = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* Header Section */}
+      <NavBar />
       <motion.div 
         className="flex justify-between items-center mb-8"
         variants={itemVariants}
       >
+      
         <div>
           <h1 className="text-4xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
             Organization Dashboard
