@@ -1,14 +1,13 @@
 import React from 'react'
 import NavBar from "../Components/Navbar"
-import Footer from "../Components/Footer"
+
 import Hero from "../Components/Hero"
 import LNFT from "../Components/LNFT"
 import BlockChain from "../Components/BlockChain"
-
 import TradeSection from "../Components/TradeSection"
-// import Icon from "../Components/Icon"
 import AboutUs from "../Components/AboutUs"
 import GetInTouch from "../Components/GetInTouch"
+import Footer from "../Components/Footer"
 function Home() {
   return (
     <>
@@ -17,7 +16,6 @@ function Home() {
     <LNFT />
     <BlockChain />
     <TradeSection />
-    {/* <Icon /> */}
     <AboutUs />
     <GetInTouch />
     <Footer/>
@@ -27,3 +25,6 @@ function Home() {
 }
 
 export default Home
+
+
+

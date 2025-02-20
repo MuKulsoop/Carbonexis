@@ -106,8 +106,35 @@ function Footer() {
           {" "}
           <p>Copyright © 2022 Nazmul Shanto. All Rights Reserved</p>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+        
       </footer>
+
+
+
+
+
+
+
+
+
     </>
+
+
+
+
+
+
   );
 }
 

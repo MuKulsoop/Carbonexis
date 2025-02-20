@@ -19,7 +19,7 @@ function NavBar() {
               <a href="/marketplace">Marketplace</a>
             </li>
             <li className="NavItem">
-              <a href="/Projects">Projects</a>
+              <a href="#">Projects</a>
             </li>
             <li className="NavItem">
               <a href="#">Blogs</a>
