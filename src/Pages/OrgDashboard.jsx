@@ -6,6 +6,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Building2, Leaf, Globe2, Wallet, Dock, Activity, Sun, Plus, Edit2, BarChart3, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import NavBar from '@/Components/Navbar';
+import { Link } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -97,9 +98,11 @@ const OrganizationDashboard = () => {
         </div>
         <Dialog>
           <DialogTrigger asChild>
+            <Link to="/projects/create">
             <Button className="bg-purple-500 hover:bg-purple-600 text-white">
               <Plus className="w-4 h-4 mr-2" /> New Project
             </Button>
+            </Link>
           </DialogTrigger>
           <DialogContent className="bg-[#141432] text-white border-purple-500/20">
             <DialogHeader>
@@ -288,9 +291,11 @@ const OrganizationDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
+              <Link to="/nft/create">
                 <Button className="w-full bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 justify-start">
                   <Plus className="w-4 h-4 mr-2" /> List New NFT
                 </Button>
+                </Link>
                 <Button className="w-full bg-blue-500/20 text-blue-300 hover:bg-blue-500/30 justify-start">
                   <Dock className="w-4 h-4 mr-2" /> Update Project Status
                 </Button>
