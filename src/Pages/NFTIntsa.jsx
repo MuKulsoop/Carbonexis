@@ -1,10 +1,11 @@
 import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Separator } from '@/components/ui/separator';
+// import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
+import { Button } from '@/Components/ui/button';
+import { Input } from '@/Components/ui/input';
+import { ScrollArea } from '@/Components/ui/scroll-area';
+import { Separator } from '@/Components/ui/separator';
 import { MessageCircle, Share2, Bookmark, MoreHorizontal, CirclePlus, Heart, Twitter } from 'lucide-react';
 import { useState } from 'react';
 import {
@@ -12,7 +13,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from '@/Components/ui/dialog';
 
 const NFTInsta = () => {
 

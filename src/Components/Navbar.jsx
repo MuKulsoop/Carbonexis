@@ -21,7 +21,7 @@ function NavBar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full bg-[#04011C] shadow-md flex items-center justify-between px-8 py-4"
+      className="w-full bg- shadow-md flex items-center justify-between px-8 py-4"
     >
       {/* Logo */}
       <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -35,7 +35,12 @@ function NavBar() {
 
       {/* Navigation Links */}
       <ul className="hidden md:flex space-x-10 text-lg text-white font-medium">
-        {["Home", "Marketplace", "NFTInsta", "Projects"].map((item, index) => (
+      <motion.li whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}>
+            <Link to="/" className="hover:text-purple-400 transition duration-300">
+              Home
+            </Link>
+          </motion.li>
+        {[ "Marketplace", "NFTInsta", "Projects"].map((item, index) => (
           <motion.li
             key={index}
             whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}

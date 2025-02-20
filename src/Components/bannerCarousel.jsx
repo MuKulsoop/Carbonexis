@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/Components/ui/card";
 import { useState } from "react";
 import {
   Carousel,
@@ -7,7 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/Components/ui/carousel";
 
 export default function BannerCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
