@@ -10,7 +10,7 @@ import {
   CircleChevronLeft,
   Zap
 } from 'lucide-react';
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetTrigger, SheetContent } from "@/Components/ui/sheet";
 import { Button } from './ui/button';
 import { motion } from "framer-motion";
 import Tooltip from './Tooltip';

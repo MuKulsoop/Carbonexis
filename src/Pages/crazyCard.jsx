@@ -8,16 +8,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/Components/ui/card"
+import { Input } from "@/Components/ui/input"
+import { Label } from "@/Components/ui/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/Components/ui/select"
 import { ArrowRight } from "lucide-react"
 
 export default function CrazyCard() {

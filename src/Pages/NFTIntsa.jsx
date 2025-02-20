@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+// import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
 import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
 import { Button } from '@/Components/ui/button';
@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from '@/Components/ui/dialog';
 
 const NFTInsta = () => {
 
