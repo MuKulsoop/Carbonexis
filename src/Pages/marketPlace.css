@@ -1,0 +1,18 @@
+@keyframes hrWidth {
+    from {
+        width: 20%;
+    }
+    to{
+        width: 50%;
+    }
+}
+
+
+
+hr{
+    background: linear-gradient(to right, #DF1CFF, #EA0070);
+    box-shadow: 0px 9px 100px 0px #D011CC59;        
+    animation: hrWidth linear;
+    animation-timeline: scroll(root);
+    animation-range: 25% 100%;
+}

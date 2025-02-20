@@ -7,6 +7,12 @@ import LoginPage from './Pages/Login';
 import SignUpPage from './Pages/SignUp';
 import Loader from './Components/Loader';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Projects from './Pages/Projects';
+import ProjectCreatePage from './Pages/CreateProject';
+import NFTInsta from './Pages/NFTIntsa';
+import UserDashboard from './Pages/Dashboard';
+import OrganizationDashboard from './Pages/OrgDashboard';
+import ProjectList from './Pages/projectsList';
 
 
 
@@ -18,7 +24,7 @@ function App() {
     // .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Duration of the loader animation
+    }, 1); // Duration of the loader animation
 
     return () => clearTimeout(timer);
   }, []);
@@ -35,6 +41,9 @@ function App() {
             <Route path='/marketplace' exact element={<MarketPlace />} />
             <Route path='/login' exact element={<LoginPage />} />
             <Route path='/signup' exact element={<SignUpPage />} />
+            <Route path='/Projects' exact element={<Projects />} />
+            <Route path='/Projects/create' exact element={<ProjectCreatePage />} />
+            <Route path='/instaNFT' exact element={<NFTInsta />} />
           </Routes>
         )}
       </Router>

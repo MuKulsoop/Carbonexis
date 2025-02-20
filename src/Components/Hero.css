@@ -10,10 +10,9 @@
 {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
+
 }
-.Heading-2
+.Heading-1
 {
   display: flex;
   justify-content: start;
@@ -99,12 +98,11 @@
 }
 .Earth {
 width: 100%;
- 
  margin-bottom:15vh ;
 }
 .Earth img{
  
-  max-width: 100%;
+  max-width: 80%;
 }
 .Button-GetStarted
 {  
@@ -162,11 +160,8 @@ width: 13em;
 }
 .EarthBottomText
 {
- 
   z-index: 1;
- border: white 4px solid;
- height: 30vh;
- margin: 0px 0px 10px 295px ;
+ height: 37vh;
   border-top-left-radius: 30px;
  background: #ffffff14;
   display: flex;

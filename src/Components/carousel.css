@@ -1,6 +1,11 @@
-
-/* navigation buttons */
-.navigation:hover{
+/* ─────────────────────────── */
+/* Glassmorphism Navigation Buttons */
+.navigation {
+    background: transparent;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.navigation:hover {
     background: rgba(255, 255, 255, 0.18);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -9,49 +14,9 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
-.navigation{
-    background: transparent;
-    color: white;
-}
 
-/* card css */
-
-.cardBG {
-    background: linear-gradient(to bottom,#143A85, #590040);
-}
-
-
-.carouselCard{
-    border-radius: calc(24px - 0.75rem);
-}
-
-.buyNowButtom{
-    background: linear-gradient(to right, #DF1CFF, #EA0070);
-    box-shadow: 0px 9px 100px 0px #D011CC59;
-}
-
-/* banner related */
-
-/* .bannerBGEffect::after{
-    content: " ";
-    display: block;
-    position: relative;
-    width: 100vw;
-    margin: auto;
-    height: 90vh;
-    inset: 0px;
-    background-image: inherit;
-    left: 0;
-    top: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:  center;
-    filter: blur(24px);
-    opacity: 0.5;
-    z-index: 10;
-} */
-
-
+/* ─────────────────────────── */
+/* Banner Background Effects */
 .bannerBGEffect::after {
     content: "";
     display: block;
@@ -63,19 +28,43 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: blur(7px);
     z-index: 10;
+    filter: blur(2px);
+    opacity: 0.6;
 }
 
+/* ─────────────────────────── */
+/* Card Styles */
+.carouselCard {
+    border-radius: 24px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-/* custom fonts */
+.carouselCard:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.3);
+}
 
+/* ─────────────────────────── */
+/* Buy Now Button */
+.buyNowButton {
+    background: linear-gradient(to right, #DF1CFF, #EA0070);
+    box-shadow: 0px 9px 100px 0px #D011CC59;
+    transition: transform 0.3s ease-in-out;
+}
 
+.buyNowButton:hover {
+    transform: scale(1.05);
+}
+
+/* ─────────────────────────── */
+/* Custom Font */
 @font-face {
     font-family: 'BruceForever';
     src: url('../../public/fonts/BruceForeverRegular.ttf');
 }
 
-.bruceForever{
+.bruceForever {
     font-family: 'BruceForever', sans-serif;
 }

@@ -49,11 +49,11 @@ export default function AboutUs() {
         </div> */}
 
         <div class="AboutUsFlex ">
-          <div class=" grid grid-cols-1 md:grid-cols-2 gap-10 w-3/6 text-center ">
+          <div class=" grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20 w-5/6 text-center ">
             {/* <!-- Card 1 --> */}
-            <div class="Mission rounded-2xl p-7 shadow-xl">
-              <h2 class="text-xl font-semibold text-white ">Our Mission</h2>
-              <p class="text-white mt-2">
+            <div class="Mission rounded-2xl p-12 shadow-xl">
+              <h2 class="text-3xl font-semibold text-white ">Our Mission</h2>
+              <p class="text-white mt-2 text-lg">
                 Accelerating carbon reduction by funding impactful
                 sustainability projects with transparent, trackable
                 contributions.
@@ -61,11 +61,11 @@ export default function AboutUs() {
             </div>
 
             {/* <!-- Card 2 --> */}
-            <div class="WhatWeDo rounded-2xl p-6 shadow-xl">
-              <h2 class="text-xl font-semibold text-white  ">
+            <div class="WhatWeDo rounded-2xl p-12 shadow-xl">
+              <h2 class="text-3xl font-semibold text-white  ">
                 What We Do?
               </h2>
-              <p class="text-white mt-2">
+              <p class="text-white mt-2 text-lg">
               Promote a sustainable economy where every contribution helps
               reduce the global carbon footprint.
                
@@ -73,9 +73,9 @@ export default function AboutUs() {
             </div>
 
             {/* <!-- Card 3 --> */}
-            <div class="OurVision rounded-2xl p-6 shadow-xl">
-              <h2 class="text-xl font-semibold text-white ">Our Vision</h2>
-              <p class="text-white mt-2">
+            <div class="OurVision rounded-2xl p-12 shadow-xl">
+              <h2 class="text-3xl font-semibold text-white ">Our Vision</h2>
+              <p class="text-white mt-2 text-lg">
               Connect donors with ongoing projects in renewable energy,
                 reforestation, and green technology that need financial support
                 to reduce carbon emissions.
@@ -83,9 +83,9 @@ export default function AboutUs() {
             </div>
 
             {/* <!-- Card 4 --> */}
-            <div class="WhyUs rounded-2xl p-6 shadow-xl">
-              <h2 class="text-xl font-semibold text-white ">Why Us?</h2>
-              <p class="text-white mt-2">
+            <div class="WhyUs rounded-2xl p-12 shadow-xl">
+              <h2 class="text-3xl font-semibold text-white ">Why Us?</h2>
+              <p class="text-white mt-2 text-lg">
                 We focus on real-world impact through collective action,
                 ensuring every donation leads to measurable environmental
                 benefits.
