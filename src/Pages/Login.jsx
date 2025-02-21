@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { WalletContext } from "@/context/walletcontext";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,18 +13,22 @@ export default function LoginPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { signer , connectWallet } = useContext(WalletContext);
   const urls = [
     // 'https://carbonexis.onrender.com/api/users/login',
     // 'http://localhost:8000/api/users/login',
   ];
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
+    
 
     try {
-      const response = await fetch("https://carbonexis.onrender.com/api/users/login", {
+      await connectWallet();
+      const response = await fetch("http://localhost:8000/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,9 +44,11 @@ export default function LoginPage() {
 
       // Store token (if needed)
       localStorage.setItem("authToken", data.token);
+      localStorage.setItem("user", data.user);
+      localStorage.setItem("owner", data.user._id);
 
       // Redirect to dashboard
-      navigate("/dashboard");
+      navigate("/orgdashboard");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -160,7 +167,7 @@ export default function LoginPage() {
                   className="w-full py-4 rounded-full bg-gradient-to-r from-[#1F3278] to-[#162053] text-white text-xl font-semibold hover:opacity-90 transition-opacity"
                   disabled={loading}
                 >
-                  {loading ? "Signing In..." : "Sign In"}
+                  {loading ? "Signing In..." : "Connect Wallet & Sign In"}
                 </motion.button>
               </form>
 

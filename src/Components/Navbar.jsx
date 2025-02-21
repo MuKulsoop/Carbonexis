@@ -16,6 +16,14 @@ function NavBar() {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("user");
+    localStorage.removeItem("signer");
+    localStorage.removeItem("owner");
+    localStorage.removeItem("provider");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("walletAddress");
     setIsAuthenticated(false);
     navigate('/')
   };
