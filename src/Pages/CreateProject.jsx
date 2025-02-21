@@ -1,169 +1,261 @@
-import { motion } from 'framer-motion';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { useDropzone } from 'react-dropzone';
-import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { Globe, Image, Landmark, DollarSign, Edit3, Trash2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Upload } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ProjectCreatePage = () => {
-  const navigate = useNavigate();
-  const [previewImages, setPreviewImages] = useState([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
+  return (
+    <div 
+      className={`absolute rounded-full bg-purple-600/20 backdrop-blur-sm`}
+      style={{
+        width: size,
+        height: size,
+        right: initialPosition.right,
+        top: initialPosition.top,
+        animation: `float ${duration}s ease-in-out infinite ${delay}s`
+      }}
+    />
+  );
+};
 
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      description: '',
-      location: '',
-      creditsPricePerTon: '',
-      images: []
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().min(5, 'Minimum 5 characters').required('Required'),
-      description: Yup.string().required('Required'),
-      location: Yup.string().required('Required'),
-      creditsPricePerTon: Yup.number().min(0, 'Must be positive').required('Required'),
-      images: Yup.array().min(1, 'At least one image required')
-    }),
-    onSubmit: async (values) => {
-      setIsSubmitting(true);
-      try {
-        const formData = new FormData();
-        values.images.forEach((image) => {
-          formData.append('images', image);
-        });
-        formData.append('project', JSON.stringify(values));
-        
-        const response = await axios.post('/api/projects', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        
-        navigate(`/projects/${response.data.project._id}`);
-      } catch (error) {
-        console.error('Submission error:', error);
-      }
-      setIsSubmitting(false);
-    }
+const NewProjectForm = () => {
+  const [formData, setFormData] = useState({
+    projectName: '',
+    ownerName: '',
+    carbonCredits: '',
+    creditsPrice: '',
+    location: '',
+    description: '',
+    images: []
   });
 
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
-    onDrop: (acceptedFiles) => {
-      formik.setFieldValue('images', [...formik.values.images, ...acceptedFiles]);
-      setPreviewImages([...previewImages, ...acceptedFiles.map(file => URL.createObjectURL(file))]);
-    }
-  });
+  const [isDragging, setIsDragging] = useState(false);
+  const [previewUrls, setPreviewUrls] = useState([]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1, 
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 } 
-    }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } }
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    
+    const files = Array.from(e.dataTransfer.files);
+    handleFiles(files);
+  };
+
+  const handleFileInput = (e) => {
+    const files = Array.from(e.target.files);
+    handleFiles(files);
+  };
+
+  const handleFiles = (files) => {
+    const imageFiles = files.filter(file => file.type.startsWith('image/'));
+    setFormData(prev => ({
+      ...prev,
+      images: [...prev.images, ...imageFiles]
+    }));
+
+    // Create preview URLs
+    const newPreviewUrls = imageFiles.map(file => URL.createObjectURL(file));
+    setPreviewUrls(prev => [...prev, ...newPreviewUrls]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Here you would typically send the data to your backend
+    console.log('Form submitted:', formData);
+    
+    // Clear form after submission
+    setFormData({
+      projectName: '',
+      ownerName: '',
+      carbonCredits: '',
+      creditsPrice: '',
+      location: '',
+      description: '',
+      images: []
+    });
+    setPreviewUrls([]);
   };
 
   return (
-    <div className="min-h-screen bg-[#04011C] relative overflow-hidden flex items-center justify-center">
-      
-      {/* Background Animated Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-[#DF1CFF] rounded-full"
-            style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%` }}
-            animate={{ y: [0, -150, 0], opacity: [0.2, 1, 0.2] }}
-            transition={{ duration: 5 + Math.random() * 5, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        ))}
+    <div className="min-h-screen bg-gradient-to-b from-blue-900 to-purple-900 p-8 relative overflow-hidden">
+      {/* Background Animations */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(-30px, -30px); }
+        }
+      `}</style>
+      <FloatingCircle size="300px" delay={0} duration={8} initialPosition={{ right: '-50px', top: '50px' }} />
+      <FloatingCircle size="100px" delay={2} duration={6} initialPosition={{ right: '100px', top: '400px' }} />
+
+      {/* Home Icon */}
+      <Link to="/">
+      <div className="absolute left-8 top-8 text-white/80 hover:text-white cursor-pointer">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
       </div>
+      </Link>
 
-      <motion.div 
-        className="w-full max-w-5xl bg-gradient-to-br from-[#04011C] to-[#130582] backdrop-blur-xl rounded-3xl border border-[#DF1CFF]/30 shadow-2xl p-10"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {/* Title Section */}
-        <motion.div className="flex items-center gap-4 mb-10" variants={itemVariants}>
-          <div className="p-3 bg-[#130582] rounded-xl">
-            <Edit3 className="w-8 h-8 text-[#DF1CFF]" />
+      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
+        {/* Project Header */}
+        <div className="flex items-center mb-8">
+          <div className="w-2 h-2 bg-white rounded-full mr-3" />
+          <h1 className="text-3xl text-white font-light tracking-wider">New Project</h1>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Upload Box */}
+          <div 
+            className={`bg-transparent border border-white/20 rounded-lg p-8 ${isDragging ? 'border-white' : ''}`}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+          >
+            <input
+              type="file"
+              id="fileInput"
+              multiple
+              accept="image/*"
+              onChange={handleFileInput}
+              className="hidden"
+            />
+            <label 
+              htmlFor="fileInput" 
+              className="h-full flex flex-col items-center justify-center text-white/80 cursor-pointer hover:text-white transition-colors"
+            >
+              <Upload className="w-12 h-12 mb-4" />
+              <span className="text-xl font-light">upload images</span>
+              {previewUrls.length > 0 && (
+                <div className="mt-4 flex gap-2 flex-wrap justify-center">
+                  {previewUrls.map((url, index) => (
+                    <img 
+                      key={index} 
+                      src={url} 
+                      alt={`Preview ${index + 1}`} 
+                      className="w-16 h-16 object-cover rounded"
+                    />
+                  ))}
+                </div>
+              )}
+            </label>
           </div>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-[#DF1CFF] to-[#130582] bg-clip-text text-transparent">
-            Launch Your Project
-          </h2>
-        </motion.div>
 
-        {/* Form */}
-        <form onSubmit={formik.handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Name Input */}
-          <motion.div variants={itemVariants}>
-            <label className="text-lg font-medium text-[#DF1CFF] flex items-center gap-3">
-              <Edit3 className="w-5 h-5" /> Project Name
-            </label>
-            <input 
-              {...formik.getFieldProps('name')}
-              className="w-full bg-[#130582]/30 border border-[#DF1CFF] rounded-lg px-4 py-3 text-white placeholder-[#DF1CFF]/50 focus:ring-[#DF1CFF]/30 transition-all"
-              placeholder="Enter project name"
+          {/* Description Box */}
+          <div className="space-y-4">
+            <h2 className="text-2xl text-white font-light">Description</h2>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleInputChange}
+              className="w-full bg-transparent text-white resize-none focus:outline-none"
+              rows={3}
+              style={{
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+                borderLeft: 'none',
+                borderRight: 'none',
+                borderTop: 'none'
+              }}
             />
-          </motion.div>
+          </div>
+        </div>
 
-          {/* Price Input */}
-          <motion.div variants={itemVariants}>
-            <label className="text-lg font-medium text-[#DF1CFF] flex items-center gap-3">
-              <DollarSign className="w-5 h-5" /> Price Per Ton ($)
-            </label>
-            <input 
-              type="number" {...formik.getFieldProps('creditsPricePerTon')}
-              className="w-full bg-[#130582]/30 border border-[#DF1CFF] rounded-lg px-4 py-3 text-white placeholder-[#DF1CFF]/50"
-              placeholder="Enter price per credit"
-            />
-          </motion.div>
-
-          {/* Location Input */}
-          <motion.div variants={itemVariants} className="col-span-2">
-            <label className="text-lg font-medium text-[#DF1CFF] flex items-center gap-3">
-              <Globe className="w-5 h-5" /> Project Location
-            </label>
-            <input 
-              {...formik.getFieldProps('location')}
-              className="w-full bg-[#130582]/30 border border-[#DF1CFF] rounded-lg px-4 py-3 text-white placeholder-[#DF1CFF]/50"
-              placeholder="Enter project location"
-            />
-          </motion.div>
-
-          {/* Image Upload */}
-          <motion.div variants={itemVariants} className="col-span-2">
-            <label className="text-lg font-medium text-[#DF1CFF] flex items-center gap-3">
-              <Image className="w-5 h-5" /> Upload Images
-            </label>
-            <div {...getRootProps()} className="border-dashed border-2 border-[#DF1CFF] p-6 text-center cursor-pointer hover:border-white transition-all">
-              <input {...getInputProps()} />
-              <p className="text-[#DF1CFF]">Drag & drop files here</p>
+        {/* Form Section */}
+        <div className="mt-8 bg-transparent border border-white/20 rounded-lg p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
+            {/* Left Column */}
+            <div className="space-y-6">
+              <div>
+                <label className="text-white/80 block mb-2">Project Name</label>
+                <input
+                  type="text"
+                  name="projectName"
+                  value={formData.projectName}
+                  onChange={handleInputChange}
+                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                />
+              </div>
+              <div>
+                <label className="text-white/80 block mb-2">Owner Name</label>
+                <input
+                  type="text"
+                  name="ownerName"
+                  value={formData.ownerName}
+                  onChange={handleInputChange}
+                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                />
+              </div>
+              <div>
+                <label className="text-white/80 block mb-2">
+                  Carbon Credits <span className="text-white/60">Issued</span>
+                </label>
+                <input
+                  type="number"
+                  name="carbonCredits"
+                  value={formData.carbonCredits}
+                  onChange={handleInputChange}
+                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                />
+              </div>
+              <div>
+                <label className="text-white/80 block mb-2">
+                  Credits Price <span className="text-white/60">per ton</span>
+                </label>
+                <input
+                  type="number"
+                  name="creditsPrice"
+                  value={formData.creditsPrice}
+                  onChange={handleInputChange}
+                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                />
+              </div>
             </div>
-          </motion.div>
 
-          {/* Submit Button */}
-          <motion.div variants={itemVariants} className="col-span-2">
+            {/* Right Column */}
+            <div>
+              <label className="text-white/80 block mb-2">Location</label>
+              <input
+                type="text"
+                name="location"
+                value={formData.location}
+                onChange={handleInputChange}
+                className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+              />
+            </div>
+          </div>
+
+          {/* Post Button */}
+          <div className="flex justify-end mt-6">
             <button 
               type="submit"
-              className="w-full bg-gradient-to-r from-[#130582] to-[#DF1CFF] text-white py-4 rounded-lg text-lg font-bold hover:scale-105 transition-transform"
+              className="px-6 py-2 bg-transparent border border-white/20 text-white rounded-lg hover:bg-purple-600/20 transition-colors flex items-center gap-2"
             >
-              {isSubmitting ? "Launching..." : "Launch Project"}
+              POST
+              <svg className="w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
             </button>
-          </motion.div>
-        </form>
-      </motion.div>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };
 
-export default ProjectCreatePage;
+export default NewProjectForm;

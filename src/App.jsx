@@ -10,7 +10,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './Pages/Projects';
 import ProjectCreatePage from './Pages/CreateProject';
 import NFTInsta from './Pages/NFTIntsa';
+import UserDashboard from './Pages/Dashboard';
+import OrganizationDashboard from './Pages/OrgDashboard';
 import ProjectList from './Pages/projectsList';
+import NFTcreate from './Pages/NFTcreate';
 
 
 
@@ -22,7 +25,7 @@ function App() {
     // .finally(() => setLoading(false));
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1); // Duration of the loader animation
+    }, 3000); // Duration of the loader animation
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,10 +42,11 @@ function App() {
             <Route path='/marketplace' exact element={<MarketPlace />} />
             <Route path='/login' exact element={<LoginPage />} />
             <Route path='/signup' exact element={<SignUpPage />} />
-            <Route path='/Projects' exact element={<Projects />} />
-            <Route path='/Projects/create' exact element={<ProjectCreatePage />} />
-            <Route path='/instaNFT' exact element={<NFTInsta />} />
-            <Route path='/projects/list' exact element={<ProjectList />} />
+            <Route path='/projects' exact element={<Projects />} />
+            <Route path='/projects/create' exact element={<ProjectCreatePage />} />
+            <Route path='/nft/create' exact element={<NFTcreate />} />
+            <Route path='/nftinsta' exact element={<NFTInsta />} />
+            <Route path='/dashboard' exact element={<OrganizationDashboard />} />
           </Routes>
         )}
       </Router>
@@ -53,3 +57,5 @@ function App() {
 }
 
 export default App;
+
+//Backend url : https://carbonexis.onrender.com

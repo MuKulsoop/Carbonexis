@@ -36,7 +36,7 @@
 
 /* Logo styling */
 .loader-logo img {
-    width: 150px;
+    width: 200px;
     animation: pulseLogo 3s ease-in-out infinite alternate, fillColor 3s ease-in-out forwards;
 }
 

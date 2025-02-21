@@ -1,62 +1,49 @@
-import * as React from "react"
-import cardImage from "../static/cardCarousel-temp/cardImage.png"
-import zaCoin from "../static/cardCarousel-temp/zaCoin.jpg"
-import { Card, CardContent } from "@/components/ui/card"
-import { ShoppingCart } from 'lucide-react';
-import './carousel.css'
-
+import React from "react";
+import { ShoppingCart } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/Components/ui/carousel";
 
-export default function CardCarousel(infoArr) {
-    let heading = infoArr.infoArr.heading;
-    infoArr = infoArr.infoArr.data;
+export default function CardCarousel({ infoArr }) {
   return (
-    <>
-    <p className="text-white pl-12 mt-14 text-2xl bruceForever" >{heading}</p>
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full m-auto mt-5 pl-9 pr-9"
-    >
-      <CarouselContent>
-        {Array.from(infoArr).map((info, index) => (
-          <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
-            <div className="p-1 text-m max-w-[80vw] m-auto">
-              <Card className = "border-0 cardBG text-white">
-                <CardContent className="flex flex-col gap-3 items-center justify-center p-2 ">
-                    <img src={info.nftUri} className="carouselCard" alt="" />
-                    <div className="content flex flex-col  gap-3 items-center p-3 w-full">
-                      <div className="flex justify-between w-full items-center">
-                          <div className="flex flex-col gap-3">
-                              <p>
-                                  {info.title}
-                              </p>
-                              <p>Price: {info.price} {info.tokenSymbol}</p>
-                          </div>
-                          <img className="w-16 h-16" src={info.tokenLogo} alt="" />
-                      </div>
-                      <button className="flex w-11/12 justify-between p-3 buyNowButtom rounded-sm">
-                          <p>BUY NOW</p>
-                          <ShoppingCart />
-                      </button>
+    <div className="mt-10 px-2">
+      <h2 className="text-3xl font-bold text-white mb-4">{infoArr.heading}</h2>
+      
+      <Carousel className="w-full">
+        <CarouselContent>
+          {infoArr.data.map((info, index) => (
+            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 cursor-pointer">
+              <div className="p-3">
+                <div className="bg-[#1A0828] border border-purple-500 shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105">
+                  
+                  <img src={info.nftUri} className="w-auto my-4 rounded-lg h-56 object-cover m-auto" alt="NFT" />
+                  
+                  <div className="p-4 space-y-3">
+                    <h3 className="text-lg font-semibold">{info.title}</h3>
+                    <div className="flex justify-between items-center">
+                      <p className="text-gray-400">Price: {info.price} {info.tokenSymbol}</p>
+                      <img src={info.tokenLogo} alt="Token" className="w-10 h-10" />
                     </div>
-                  {/* <span className="text-3xl font-semibold">{index + 1}</span> */}
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className = "left-1 navigation" />
-      <CarouselNext className = "right-1 navigation" />
-    </Carousel>
-    </>
-  )
+
+                    <button className="w-full flex items-center justify-between p-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md hover:shadow-xl transition-all duration-300">
+                      <span>BUY NOW</span>
+                      <ShoppingCart size={20} />
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <CarouselPrevious className="text-white hover:text-purple-500 transition" />
+        <CarouselNext className="text-white hover:text-purple-500 transition" />
+      </Carousel>
+    </div>
+  );
 }

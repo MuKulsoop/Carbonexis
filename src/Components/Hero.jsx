@@ -7,7 +7,7 @@ function Hero() {
     
       <main>
         <div className="Hero">
-        <div className="EarthBottomText absolute mt-[25rem] ml-[72vw]">
+        <div className="EarthBottomText absolute mt-[25rem] ml-[69vw]">
               <div className="content">
                 <h3 className="HeadingOfEarthBottomText">
                   Solar Project Support

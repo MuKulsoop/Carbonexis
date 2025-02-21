@@ -4,7 +4,7 @@ import {Facebook, InstagramIcon,  TwitterIcon, } from "lucide-react";
 function Footer() {
   return (
     <>
-      <footer>
+      <footer className=" mt-14">
         <div className="MainFooter">
           <ul className="Footer">
             {" "}
@@ -106,8 +106,35 @@ function Footer() {
           {" "}
           <p>Copyright © 2022 Nazmul Shanto. All Rights Reserved</p>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+        
       </footer>
+
+
+
+
+
+
+
+
+
     </>
+
+
+
+
+
+
   );
 }
 
