@@ -30,7 +30,7 @@ export default function CrazyCard2() {
 
 
 <>
-<div className="projectDetails overflow-hidden"   >
+<div className="projectDetails overflow-hidden m-auto"   >
 <svg xmlns="http://www.w3.org/2000/svg" onMouseEnter={() => setIsCardHover(true)}
         onMouseLeave={() => setIsCardHover(false)} width="339" height="437" viewBox="0 0 339 437" fill="none">
 <g filter="url(#filter0_d_56_905)">
@@ -134,7 +134,7 @@ export default function CrazyCard2() {
 
         <Card className="border-none text-white w-[300px] m-auto bg-transparent">
       <CardHeader className="pb-1">
-      <div className={`crazyImage w-auto  ${isCardHover ? 'h-[100px] crazyImageSmall' : 'h-[255px]'}`} >
+      <div className={`crazyImage w-auto transition-transform duration-300 ${isCardHover ? 'h-[100px] crazyImageSmall' : 'h-[255px]'}`} >
         </div>
 
         {/* <CardTitle className="text-center text-4xl mb-4" >Demetra</CardTitle> */}
