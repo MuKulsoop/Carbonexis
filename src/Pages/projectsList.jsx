@@ -5,10 +5,13 @@ import CrazyCard from './crazyCard'
 import CrazyCard2 from './crazyCard2'
 import BannerCarousel from '../Components/bannerCarousel'
 import { DropDown } from '@/Components/dropDown'
+import NavBar from '@/Components/Navbar'
 
 function ProjectList() {
   return (
     <>
+        <NavBar />
+        <hr className='mx-4' /> 
         {/* <Sidebar /> */}
         {/* <div id='topProjects' className='w-full flex justify-center h-[419px]'>
             <h1 className='text-white'>TOP UPVOTED PROJECTS</h1>
@@ -21,7 +24,18 @@ function ProjectList() {
 
             </div>
         </div> */}
-          <h1 className='text-white text-4xl' >Explore</h1>
+        <div className=" text-center m-4 text-3xl font-bold bg-gradient-to-r from-[white] to-[#0038FF] text-transparent bg-clip-text">
+           Top Upvoted Projects
+        </div>
+        {/* <h1 className='text-4xl text-white text-center my-4' ></h1> */}
+        <div className = " h-[497px] overflow-hidden flex box-border mx-4">
+            <BannerCarousel  />
+            <CrazyCard />
+        </div>
+        <div className=" text-center m-4 text-3xl font-bold bg-gradient-to-r from-[white] to-[#0038FF] text-transparent bg-clip-text">
+           Top Upvoted Projects
+        </div>
+          {/* <h1 className='text-white text-4xl m-4' >Explore</h1> */}
           <div className="flex w-full justify-center gap-4 mb-4">
 
           <DropDown className="flex-1" topic="Timeframe: All-time" />

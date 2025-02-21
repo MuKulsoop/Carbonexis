@@ -39,7 +39,6 @@ export default function LoginPage() {
 
       // Store token (if needed)
       localStorage.setItem("authToken", data.token);
-
       // Redirect to dashboard
       navigate("/dashboard");
     } catch (err) {
