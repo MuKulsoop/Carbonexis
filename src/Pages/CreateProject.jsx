@@ -76,20 +76,43 @@ const NewProjectForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
+    if (!formData.projectName || !formData.carbonCredits || !formData.creditsPrice || !formData.location) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
-    // Clear form after submission
-    setFormData({
-      projectName: "",
-      ownerName: "",
-      carbonCredits: "",
-      creditsPrice: "",
-      location: "",
-      description: "",
-      images: [],
-    });
-    setPreviewUrls([]);
+    const formPayload = new FormData();
+    formPayload.append("projectName", formData.projectName);
+    formPayload.append("ownerName", formData.ownerName);
+    formPayload.append("carbonCredits", formData.carbonCredits);
+    formPayload.append("creditsPrice", formData.creditsPrice);
+    formPayload.append("location", formData.location);
+    formPayload.append("description", formData.description);
+    formData.images.forEach((image) => formPayload.append("images", image));
+
+    try {
+      const response = await fetch("http://localhost:8000/api/projects/create", {
+        method: "POST",
+        body: formPayload,
+      });
+
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || "Failed to create project.");
+
+      alert("Project created successfully!");
+      setFormData({
+        projectName: "",
+        ownerName: "",
+        carbonCredits: "",
+        creditsPrice: "",
+        location: "",
+        description: "",
+        images: [],
+      });
+      setPreviewUrls([]);
+    } catch (error) {
+      alert(error.message || "An error occurred.");
+    }
   };
 
   return (
@@ -289,7 +312,8 @@ const NewProjectForm = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              className="px-6 py-2 bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text transition-colors flex items-center gap-2"
+              className="relative px-10 py-2 bg-gradient-to-r from-[#e11cff75] flex gap-3 j to-[#ea007141] text-white rounded-lg 
+                shadow-lg transition duration-300 hover:shadow-purple-500/50"
             >
               POST
               <svg
