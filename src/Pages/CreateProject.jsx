@@ -227,7 +227,7 @@ const NewProjectForm = () => {
                 />
               </div>
               <div>
-                <label className=" text-lg bg-gradient-to-r from-[#FFFFFF] to-[#0037ff] text-transparent bg-clip-text mb-2">
+                <label className=" text-lg bg-gradient-to-r from-[#FFFFFF] to-[#5c9de2] text-transparent bg-clip-text mb-2">
                   Owner Name
                 </label>
                 <input
@@ -241,7 +241,7 @@ const NewProjectForm = () => {
               <div>
                 <label className= "text-lg text-white/80 block mb-2">
                   Carbon {" "}
-                  <span className="text-lg bg-gradient-to-r  from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text">
+                  <span className="text-lg bg-gradient-to-r  from-[#FFFFFFE6] to-[#5c9de2] text-transparent bg-clip-text">
                   Credits Issued
                   </span>
                 </label>
@@ -256,7 +256,7 @@ const NewProjectForm = () => {
               <div>
                 <label className="text-lg text-white/80 block mb-2">
                   Credits {" "}
-                  <span className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text">
+                  <span className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#5c9de2] text-transparent bg-clip-text">
                   Price per ton
                   </span>
                 </label>
@@ -272,7 +272,7 @@ const NewProjectForm = () => {
 
             {/* Right Column */}
             <div>
-              <label className="bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text mb-2">
+              <label className="bg-gradient-to-r from-[#FFFFFFE6] to-[#5c9de2] text-transparent bg-clip-text mb-2">
                 Location
               </label>
               <input
@@ -289,7 +289,8 @@ const NewProjectForm = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              className="px-6 py-2 bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text transition-colors flex items-center gap-2"
+              className="relative px-10 py-2 bg-gradient-to-r from-[#e11cff5c] flex gap-3 justify-center items-center to-[#ea007133] text-white rounded-lg 
+                shadow-lg transition duration-300 hover:shadow-purple-500/50"
             >
               POST
               <svg

@@ -38,8 +38,14 @@ function NavBar() {
       </motion.div>
 
       {/* Navigation Links */}
+      
       <ul className="hidden md:flex space-x-10 text-lg text-white font-medium">
-        {["Home", "Marketplace", "NFTInsta", "Projects"].map((item, index) => (
+      <motion.li whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}>
+            <Link to="/" className="hover:text-purple-400 transition duration-300">
+              Home
+            </Link>
+          </motion.li>
+        {["Marketplace", "NFTInsta", "Projects"].map((item, index) => (
           <motion.li
             key={index}
             whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}
@@ -52,8 +58,15 @@ function NavBar() {
         ))}
         {isAuthenticated && (
           <motion.li whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}>
-            <Link to="/dashboard" className="hover:text-purple-400 transition duration-300">
-              Dashboard
+            <Link to="/userdashboard" className="hover:text-purple-400 transition duration-300">
+              User Dashboard
+            </Link>
+          </motion.li>
+        )}
+        {isAuthenticated && (
+          <motion.li whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}>
+            <Link to="/orgdashboard" className="hover:text-purple-400 transition duration-300">
+              Org Dashboard
             </Link>
           </motion.li>
         )}

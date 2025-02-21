@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { Leaf, Globe2, Wallet, Dock, Activity, Sun } from 'lucide-react';
+import NavBar from '@/Components/Navbar';
 
 const UserDashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('month');
@@ -22,6 +23,8 @@ const UserDashboard = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0B1E] bg-gradient-to-b from-[#0A0B1E] to-[#1A1B3E] p-6">
+    
+    <NavBar />
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
