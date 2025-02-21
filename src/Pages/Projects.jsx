@@ -5,7 +5,7 @@ import ProjectList from './projectsList'
 function Projects() {
   return (
     <>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <ProjectList />
     </>
   )
