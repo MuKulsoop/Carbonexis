@@ -151,7 +151,7 @@ const NFTcreate = () => {
           <div className="space-y-6">
             {['Minimum Minted Price', 'Buying Price', 'Selling Price', 'Location'].map((label) => (
               <div key={label}>
-                <label className="text-white/80 block mb-2 text-lg font-light">{label}</label>
+                <label className="bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text block mb-2 text-xl font-semibold">{label}</label>
                 <input
                   type={label === 'Location' ? 'text' : 'number'}
                   name={label.toLowerCase().replace(/\s+/g, '')}
@@ -204,7 +204,8 @@ const NFTcreate = () => {
         <div className="flex justify-end mt-8">
           <button 
             type="submit"
-            className="px-6 py-2 bg-transparent border border-white/20 text-white rounded-lg hover:bg-purple-600/20 transition-colors flex items-center gap-2"
+            className="relative px-10 py-2 bg-gradient-to-r from-[#e11cff8b] to-[#ea007188] text-white rounded-lg 
+                shadow-lg transition duration-300 hover:shadow-purple-500/50 flex items-center gap-3"
           >
             POST
             <svg className="w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
