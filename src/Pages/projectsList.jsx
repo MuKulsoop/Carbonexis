@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '@/Components/Sidebar'
 import { ProjectImageCarousel } from '@/Components/projectImageCarousel'
 import CrazyCard from './crazyCard'
+import CrazyCard2 from './crazyCard2'
 function ProjectList() {
   return (
     <>
@@ -9,7 +10,9 @@ function ProjectList() {
         <div id='topProjects' >
             <div className="projectImage">
                 {/* <ProjectImageCarousel /> */}
-                <CrazyCard />
+                {/* <CrazyCard /> */}
+                <CrazyCard2 />
+
             </div>
             <div className="projectDetails">
 

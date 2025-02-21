@@ -1,0 +1,11 @@
+.crazyImage {
+    /* border: 1px dashed black; */
+    background-position: center;
+    background-image: url('https://bennettfeely.com/clippy/pics/pittsburgh.jpg');
+    clip-path: polygon(10% 0, 100% 0, 100% 20%, 100% 89%, 90% 100%, 20% 100%, 0 100%, 0 10%);
+}
+
+.crazyImageSmall{
+    background-position: center;
+    clip-path: (7% 0, 100% 0, 100% 20%, 100% 80%, 92% 100%, 20% 100%, 0 100%, 0 22%)
+}
