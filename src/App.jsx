@@ -59,3 +59,4 @@ function App() {
 export default App;
 
 //Backend url : https://carbonexis.onrender.com
+//frontend url : https://carbonexis-git-main-mukuls-projects-e1e1a0ab.vercel.app/

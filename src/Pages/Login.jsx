@@ -12,6 +12,10 @@ export default function LoginPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const urls = [
+    // 'https://carbonexis.onrender.com/api/users/login',
+    // 'http://localhost:8000/api/users/login',
+  ];
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +23,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/api/users/login", {
+      const response = await fetch("https://carbonexis.onrender.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
