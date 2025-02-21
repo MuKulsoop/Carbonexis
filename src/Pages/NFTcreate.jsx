@@ -4,7 +4,7 @@ import { Upload } from 'lucide-react';
 const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
   return (
     <div 
-      className={`absolute rounded-full bg-purple-600/20 backdrop-blur-sm`}
+      className={`absolute rounded-full bg-gradient-to-b from-[#b20aa7a5] to-[#6e1fab7e] backdrop-blur-sm`}
       style={{
         width: size,
         height: size,
@@ -92,19 +92,19 @@ const NFTcreate = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-900 to-purple-900 p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#143A85] to-[#590040] p-8 relative overflow-hidden">
       {/* Background Animations */}
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translate(0, 0); }
-          50% { transform: translate(-30px, -30px); }
+          50% { transform: translate(-40px, -40px); }
         }
       `}</style>
       <FloatingCircle size="300px" delay={0} duration={8} initialPosition={{ right: '-50px', top: '50px' }} />
       <FloatingCircle size="100px" delay={2} duration={6} initialPosition={{ right: '100px', top: '400px' }} />
 
       {/* Home Icon */}
-      <div className="absolute left-8 top-8 text-white/80 hover:text-white cursor-pointer">
+      <div className="absolute left-8 top-8 cursor-pointer text-[#ffffff]">
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
@@ -114,13 +114,13 @@ const NFTcreate = () => {
         {/* NEW Header */}
         <div className="flex items-center mb-8">
           <div className="w-2 h-2 bg-white rounded-full mr-3" />
-          <h1 className="text-4xl text-white font-light tracking-widest">NEW</h1>
+          <h1 className="text-4xl text-transparent bg-gradient-to-r from-[#fffffff8] to-[#0037ffc0] bg-clip-text font-light tracking-widest">NEW</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
           {/* Upload Box */}
           <div 
-            className={`bg-transparent border border-white/20 rounded-lg aspect-square ${isDragging ? 'border-white' : ''}`}
+            className={`bg-gradient-to-b from-[#143a85c0] to-[#590040c5] border-2 border-[#9e9696] rounded-lg aspect-square ${isDragging ? 'border-white' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
@@ -141,7 +141,7 @@ const NFTcreate = () => {
               ) : (
                 <>
                   <Upload className="w-12 h-12 mb-4" />
-                  <span className="text-xl font-light">upload NFT</span>
+                  <span className="text-2xl font-light">upload NFT</span>
                 </>
               )}
             </label>
@@ -165,9 +165,9 @@ const NFTcreate = () => {
         </div>
 
         {/* Description and Project Selection */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 mt-8">
           <div className="space-y-4">
-            <h2 className="text-2xl text-white font-light">Description</h2>
+            <h2 className="text-3xl bg-gradient-to-r from-[#ffffffd6] to-[#0037ffe5] text-transparent bg-clip-text font-bold">Description</h2>
             <textarea
               name="description"
               value={formData.description}
@@ -179,7 +179,7 @@ const NFTcreate = () => {
 
           <div className="space-y-4">
             <div className="relative">
-              <h2 className="text-2xl text-white font-light mb-4">Select Your Project ▼</h2>
+              <h2 className="text-2xl bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-bold mb-4">Select Your Project ▼</h2>
               <div 
                 className="bg-transparent border border-white/20 rounded-lg overflow-hidden cursor-pointer"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
