@@ -23,14 +23,14 @@ export default function MarketPlace(){
         },
         {
             title: "Greenie Weenie #101",
-            nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+            nftUri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTKUZ4gCR0WQUWGaApCocaEGFj2tW9pN2lRA&s",
             price: 0.013991,
             tokenSymbol: "ETH",
             tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
         },
         {
             title: "Greenie Weenie #101",
-            nftUri: "https://i.ibb.co/s98vrKJT/card-Image.png",
+            nftUri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmU4j86emx1gmRULy5BlliaUolpRV-0cCXmA&s",
             price: 0.013991,
             tokenSymbol: "ETH",
             tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png"
