@@ -117,21 +117,73 @@ export default function MarketPlace() {
         tokenSymbol: "SOL",
         tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png",
       },
-      {
-        title: "Melody in Bloom",
-        nftUri:
-          "",
-        price: 0.0025465,
-        tokenSymbol: "SOhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAhmXdOF1LyPaNrk-pK8S5dV39Cu3UgtLeA&sL",
-        tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png",
-      },
+      
     ],
   };
+
+  let projects = [
+    {
+      title: "RecycLoop",
+      owner: "RecycleTech",
+      image: "https://images.pexels.com/photos/1261731/pexels-photo-1261731.jpeg",
+      postDate: "2024-02-12T14:00:00Z",
+      description: "RecycLoop enhances recycling efficiency through AI-driven waste sorting technology.",
+      target: 1800,
+      raised: 1350,
+      ownerImage: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+      votes: 28
+    },
+    {
+      title: "AquaHarvest",
+      owner: "BlueTech",
+      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg",
+      postDate: "2024-01-15T10:30:00Z",
+      description: "AquaHarvest revolutionizes sustainable aquaculture practices to protect marine biodiversity.",
+      target: 4100,
+      raised: 2750,
+      ownerImage: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg",
+      votes: 40
+    },
+    {
+      title: "SmartGrid",
+      owner: "PowerSolutions",
+      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      postDate: "2024-03-01T09:00:00Z",
+      description: "SmartGrid optimizes electricity consumption with AI-powered grid balancing technology.",
+      target: 6200,
+      raised: 5000,
+      ownerImage: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+      votes: 60
+    },
+    {
+      title: "GreenRoof",
+      owner: "EcoBuild",
+      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+      postDate: "2024-02-05T16:30:00Z",
+      description: "GreenRoof enables urban buildings to reduce heat and improve air quality through rooftop gardens.",
+      target: 2600,
+      raised: 1950,
+      ownerImage: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+      votes: 25
+    },
+    {
+      title: "WindHarvest",
+      owner: "BreezeTech",
+      image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
+      postDate: "2024-01-28T14:45:00Z",
+      description: "WindHarvest provides cost-effective wind turbines for small communities and businesses.",
+      target: 4000,
+      raised: 2800,
+      ownerImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+      votes: 45
+    },
+   
+  ];
   return (
     <>
       <div className="bg-[#0A021A] min-h-screen text-white">
         <NavBar />
-        <BannerCarousel />
+        <BannerCarousel projects={projects} currentProjectIndex={0} setCurrentProjectIndex={0} />
 
         <div className="text-center my-8 ">
           <h1 className="text-5xl font-extrabold  text-white mb-6 bg-clip-text ">

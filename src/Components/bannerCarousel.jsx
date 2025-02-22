@@ -25,7 +25,7 @@ export default function BannerCarousel({projects, currentProjectIndex, setCurren
   };
 
   return (
-    <div className="relative">
+    <div className="relative text-black">
       <Carousel className="m-auto max-w-[90vw]" 
         // onValueChange={(value) => handleSlideChange(value)}
       >

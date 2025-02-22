@@ -180,7 +180,7 @@ function ProjectList() {
             <CrazyCard  project = {topProjects[currentProjectIndex]} />
         </div>
         <div className=" text-center m-4 text-3xl font-bold bg-gradient-to-r from-[white] to-[#0038FF] text-transparent bg-clip-text">
-           Top Upvoted Projects
+           Explore
         </div>
           {/* <h1 className='text-white text-4xl m-4' >Explore</h1> */}
           <div className="flex w-full justify-center gap-4 mb-4">
