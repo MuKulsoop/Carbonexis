@@ -18,14 +18,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ArrowRight } from "lucide-react"
-
+import { ArrowRight, HandCoins } from "lucide-react"
+import dayjs from "dayjs"
+import relativeTime from "dayjs/plugin/relativeTime";
+import duration from "dayjs/plugin/duration";
 import './crazyCard.css'
 
-export default function CrazyCard2() {
-    const percentage = 72
-    const ethRaised = 1873
+dayjs.extend(relativeTime);
+dayjs.extend(duration);
+
+
+
+
+export default function CrazyCard2(projectDets) {
+  projectDets = projectDets.projectDets;
+    const percentage = parseFloat(projectDets.completed)
+    const ethRaised = projectDets.raised
     const [isCardHover, setIsCardHover] = React.useState(false)
+
+    
+
   return (
 
 
@@ -127,36 +139,54 @@ export default function CrazyCard2() {
 <stop stopColor="white" stopOpacity={0.9}/>
 <stop offset="1" stopColor="#0038FF" stopOpacity={0.89}/>
 </linearGradient>
+
+<linearGradient id="button-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style={{ stopColor: '#975BA1' }} />
+<stop offset="100%" style={{ stopColor: '#B858A1' }} />
+</linearGradient>
+
 </defs>
+
+
 
 
   <foreignObject className="w-full h-full" >
 
         <Card className="border-none text-white w-[300px] m-auto bg-transparent">
       <CardHeader className="pb-1">
-      <div className={`crazyImage w-auto transition-transform duration-300 ${isCardHover ? 'h-[100px] crazyImageSmall' : 'h-[255px]'}`} >
+      <div style={{
+        backgroundImage: `url(${projectDets.image})`
+      }} className={`crazyImage w-auto transition-all duration-300 ${isCardHover ? 'h-[100px] crazyImageSmall' : 'h-[255px]'}`} >
         </div>
 
         {/* <CardTitle className="text-center text-4xl mb-4" >Demetra</CardTitle> */}
         <CardDescription className="flex items-center" >
-            <img src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="" />
+            <div  className="w-6 h-6 mr-4 rounded-full"
+            style={{
+              backgroundImage: `url(${projectDets.ownerImage})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat"
+            }}
+            alt="" > </div>
             <div className="dets">
-            <p className="text-base" >GreenSolution</p>
-            <p className="text-xs">Posted 2 months ago</p>
+            <p className="text-base" > {projectDets.owner} </p>
+            <p className="text-xs">Posted { calcDateDifference(projectDets.postDate) } ago</p>
             </div>
         </CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-left text-sm" >
-            DEMETRA by Green Code reduces food waste and carbon footprint with sustainable cost-effective storage
+          { projectDets.description }
+            {/* DEMETRA by Green Code reduces food waste and carbon footprint with sustainable cost-effective storage */}
         </p>
-        <div className={`transition-transform duration-300 ${isCardHover ? 'opacity-1' : 'opacity-0'}`}
+        <div className={`transition-all duration-250 ${isCardHover ? 'opacity-1' : 'opacity-0'}`}
 >
           <div className="flex items-center ">
               <img src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="T" />
               <div className="ml-[2px]">
                   <p className="text-sm" >Target</p>
-                  <p className="text-xs">2400 ETH</p>
+                  <p className="text-xs">{projectDets.target} ETH</p>
               </div>
           </div>
           <div className="progress mt-4">
@@ -182,12 +212,13 @@ export default function CrazyCard2() {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline" size="icon" className="text-black">D</Button>
+        <Button variant="outline" size="icon" className="text-black">
+          <HandCoins style={{ stroke: 'url(#button-gradient)' }} className="stroke-[2]" />
+        </Button>
         
         <div className="flex items-center">
-            <img className="w-9 h-9 rounded-[50%]" src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="" />
             <p className="text-sm" >
-                +50 NFTs minted
+                Explore
             </p>
             <ArrowRight className="ml-1 p-1 text-white bg-blue-600 rounded-[50%] " />
         </div>
@@ -203,3 +234,23 @@ export default function CrazyCard2() {
     </>
   )
 }
+
+const calcDateDifference = (selectedDate) => {
+  if (!selectedDate) return "";
+
+  const today = dayjs();
+  const chosenDate = dayjs(selectedDate);
+  
+  const years = today.diff(chosenDate, "year");
+  const months = today.diff(chosenDate, "month") % 12;
+  const days = today.diff(chosenDate, "day") % 30; // Approximate
+
+  if (days < 0) {
+    return `${Math.abs(days)} days `;
+  } else if (months < 0) {
+    return `${Math.abs(months)} months `;
+  } else if (years < 0) {
+    return `${Math.abs(years)} years `;
+  }
+
+};
