@@ -46,7 +46,8 @@ function App() {
             <Route path='/projects/create' exact element={<ProjectCreatePage />} />
             <Route path='/nft/create' exact element={<NFTcreate />} />
             <Route path='/nftinsta' exact element={<NFTInsta />} />
-            <Route path='/dashboard' exact element={<OrganizationDashboard />} />
+            <Route path='/orgdashboard' exact element={<OrganizationDashboard />} />
+            <Route path='/userdashboard' exact element={<UserDashboard />} />
           </Routes>
         )}
       </Router>

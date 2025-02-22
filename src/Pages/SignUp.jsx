@@ -30,7 +30,7 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const apiUrl = "http://localhost:8000/api/users/signup"; // Make sure the URL is correct
+    const apiUrl = "https://carbonexis.onrender.com/api/users/signup"; // Make sure the URL is correct
 
     try {
       const response = await fetch(apiUrl, {

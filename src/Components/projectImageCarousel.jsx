@@ -18,13 +18,13 @@ export function ProjectImageCarousel() {
     "../../src/static/marketplace/NFTM.png",
   ]
   return (
-    <Carousel className="w-full max-w-xs m-auto">
+    <Carousel className=" m-auto">
       <CarouselContent>
         {Array.from(bannerImages).map((image, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center">
+                <CardContent className="flex items-center justify-center">
                   <img src={image} className="w-full"  alt="" />
                 </CardContent>
               </Card>
