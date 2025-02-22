@@ -18,11 +18,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/Components/ui/select"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, HandCoins } from "lucide-react"
+import dayjs from "dayjs"
 
-export default function CrazyCard() {
-    const percentage = 72
-    const ethRaised = 1873
+export default function CrazyCard(project) {
+  project = project.project
+    const percentage = project.completed
+    const ethRaised = project.raised
   return (
 
 
@@ -130,24 +132,25 @@ export default function CrazyCard() {
 
         <Card className="border-none text-white w-[350px] m-auto mt-5 bg-transparent">
       <CardHeader>
-        <CardTitle className="text-center text-4xl mb-4" >Demetra</CardTitle>
+        <CardTitle className="text-center text-4xl mb-4" >{project.title}</CardTitle>
         <CardDescription className="flex items-center" >
             <img src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="" />
             <div className="dets">
-            <p className="text-lg" >GreenSolution</p>
-            <p className="text-xs">Posted 2 months ago</p>
+            <p className="text-lg" >{project.owner}</p>
+            <p className="text-xs">Posted {calcDateDifference(project.postDate)} ago</p>
             </div>
         </CardDescription>
       </CardHeader>
       <CardContent className="m-2">
         <p className="text-left" >
-            DEMETRA by Green Code reduces food waste and carbon footprint with sustainable cost-effective storage
+          {project.description}
+            {/* DEMETRA by Green Code reduces food waste and carbon footprint with sustainable cost-effective storage */}
         </p>
         <div className="flex items-center mt-4">
             <img src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="T" />
             <div className="ml-[2px]">
                 <p className="text-sm" >Target</p>
-                <p className="text-xs">2400 ETH</p>
+                <p className="text-xs">{project.target} ETH</p>
             </div>
         </div>
         <div className="progress mt-4">
@@ -172,12 +175,13 @@ export default function CrazyCard() {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Donate</Button>
+        <Button variant="outline" size="icon" className="text-black">
+          <HandCoins style={{ stroke: 'url(#button-gradient)' }} className="stroke-[2]" />
+        </Button>
         
         <div className="flex items-center">
-            <img className="w-12 h-12 rounded-[50%]" src="https://media.decentralized-content.com/-/rs:fit:48:48/f:best/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWRyYmQ1b3F3bG9yenZqeTYzeWFnY3ZyZ3V1cGhleGFla3lzMzJnd2thcmNwb2plN203YmU=" alt="" />
             <p>
-                +50 NFTs minted
+                Explore
             </p>
             <ArrowRight className="ml-1 p-1 text-white bg-blue-600 rounded-[50%] " />
         </div>
@@ -193,3 +197,23 @@ export default function CrazyCard() {
     </>
   )
 }
+
+const calcDateDifference = (selectedDate) => {
+  if (!selectedDate) return "";
+
+  const today = dayjs();
+  const chosenDate = dayjs(selectedDate);
+  
+  const years = today.diff(chosenDate, "year");
+  const months = today.diff(chosenDate, "month") % 12;
+  const days = today.diff(chosenDate, "day") % 30; // Approximate
+
+  if (days < 0) {
+    return `${Math.abs(days)} days `;
+  } else if (months < 0) {
+    return `${Math.abs(months)} months `;
+  } else if (years < 0) {
+    return `${Math.abs(years)} years `;
+  }
+
+};
