@@ -41,7 +41,7 @@ const UserDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-purple-300">Total Carbon Credits</p>
-                <p className="text-3xl font-bold text-white mt-2">245.8 tons</p>
+                <p className="text-3xl font-bold text-white mt-2">245.8 tons</p>cd
                 <div className="flex items-center text-green-400 text-sm mt-2">
                   <span>+12.3% this month</span>
                 </div>

@@ -23,7 +23,7 @@ export default function CardCarousel({ infoArr }) {
                   <img src={info.nftUri} className="w-auto my-4 rounded-lg h-56 object-cover m-auto" alt="NFT" />
                   
                   <div className="p-4 space-y-3">
-                    <h3 className="text-lg font-semibold">{info.title}</h3>
+                    <h3 className="text-lg font-semibold text-white">{info.title}</h3>
                     <div className="flex justify-between items-center">
                       <p className="text-gray-400">Price: {info.price} {info.tokenSymbol}</p>
                       <img src={info.tokenLogo} alt="Token" className="w-10 h-10" />

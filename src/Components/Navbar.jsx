@@ -53,7 +53,7 @@ function NavBar() {
               Home
             </Link>
           </motion.li>
-        {["Marketplace", "NFTInsta", "Projects"].map((item, index) => (
+        {["Auctionplace", "NFTInsta", "Projects"].map((item, index) => (
           <motion.li
             key={index}
             whileHover={{ y: -4, scale: 1.05, color: "#bb13e9" }}

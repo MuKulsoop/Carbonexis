@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Upload } from "lucide-react";
 import { Link } from "react-router-dom";
+import { mintCertificationNFT } from "@/utils/BlockchainUtils";
+import { registerProjectOnChain } from "@/utils/BlockchainUtils";
+import { WalletContext } from "@/context/walletcontext";
+import { ethers } from "ethers";
+
 
 const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
   return (
+    
     <div
       className={`absolute rounded-full bg-gradient-to-b from-[#b20aabc0] to-[#6e1fabc0] backdrop-blur-sm`}
       style={{
@@ -19,8 +26,9 @@ const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
 
 const NewProjectForm = () => {
   const [formData, setFormData] = useState({
+    owner: "",
     projectName: "",
-    ownerName: "",
+    name: "",
     carbonCredits: "",
     creditsPrice: "",
     location: "",
@@ -30,6 +38,27 @@ const NewProjectForm = () => {
 
   const [isDragging, setIsDragging] = useState(false);
   const [previewUrls, setPreviewUrls] = useState([]);
+  const { connectWallet } = useContext(WalletContext);
+  const [signer, setSigner] = useState(null);
+  const [owner, setOwner] = useState(null);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const getSigner = async () => {
+      try {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        setSigner(signer);
+        const owner = localStorage.getItem("owner")
+        if(owner){
+          setOwner(owner)
+        }
+      } catch (error) {
+        console.error("Failed to get signer:", error);
+      }
+    };
+
+    getSigner();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -76,33 +105,87 @@ const NewProjectForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.projectName || !formData.carbonCredits || !formData.creditsPrice || !formData.location) {
+
+    if (
+      !formData.projectName ||
+      !formData.carbonCredits ||
+      !formData.creditsPrice ||
+      !formData.location
+    ) {
       alert("Please fill in all required fields.");
       return;
     }
 
-    const formPayload = new FormData();
-    formPayload.append("projectName", formData.projectName);
-    formPayload.append("ownerName", formData.ownerName);
-    formPayload.append("carbonCredits", formData.carbonCredits);
-    formPayload.append("creditsPrice", formData.creditsPrice);
-    formPayload.append("location", formData.location);
-    formPayload.append("description", formData.description);
-    formData.images.forEach((image) => formPayload.append("images", image));
+    if (!signer) {
+      await connectWallet();
+    }
 
     try {
-      const response = await fetch("http://localhost:8000/api/projects/create", {
-        method: "POST",
-        body: formPayload,
-      });
+      // Step 1: Mint NFT (Certification)
+      const projectId = await mintCertificationNFT("www.pinata.com", signer);
+      console.log("NFT Minted, Project ID:", projectId);
+
+      // Step 2: Register Project on Blockchain
+      const projectRegistered = await registerProjectOnChain(
+        signer,
+        projectId,
+        formData.projectName,
+        formData.description,
+        formData.location,
+        formData.creditsPrice,
+        formData.carbonCredits
+      );
+
+      if (!projectRegistered) {
+        throw new Error("Blockchain project registration failed");
+      }
+
+      console.log("Project Registered on Blockchain");
+
+      // Step 3: Register Project in Backend
+      
+      const formPayload = new FormData();
+      formPayload.append("projectName", formData.projectName);
+      formPayload.append("name", formData.name);
+      formPayload.append("carbonCredits", formData.carbonCredits);
+      formPayload.append("creditsPrice", formData.creditsPrice);
+      formPayload.append("location", formData.location);
+      formPayload.append("description", formData.description);
+      formPayload.append("owner", owner);
+      const imageBase64Array = await Promise.all(
+        formData.images.map(async (image) => {
+          const reader = new FileReader();
+          return new Promise((resolve) => {
+            reader.readAsDataURL(image);
+            reader.onloadend = () => resolve(reader.result);
+          });
+        })
+      );
+      formPayload.append("images", JSON.stringify(imageBase64Array));
+
+      const response = await fetch(
+        "http://localhost:8000/api/projects/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            images: imageBase64Array, 
+          }),
+        }
+      );
 
       const result = await response.json();
-      if (!response.ok) throw new Error(result.message || "Failed to create project.");
+      if (!response.ok)
+        throw new Error(result.message || "Failed to create project.");
 
       alert("Project created successfully!");
-      setFormData({
+      navigate('/orgdashboard')
+      setFormData({ 
         projectName: "",
-        ownerName: "",
+        name: "",
         carbonCredits: "",
         creditsPrice: "",
         location: "",
@@ -143,7 +226,8 @@ const NewProjectForm = () => {
       />
 
       {/* Home Icon */}
-      <Link to="/">
+      {/* <Sidebar /> */}
+      {/* <Link to="/">
         <div className="absolute left-8 top-8 text-white/80 hover:text-white cursor-pointer">
           <svg
             className="w-6 h-6"
@@ -159,12 +243,12 @@ const NewProjectForm = () => {
             />
           </svg>
         </div>
-      </Link>
+      </Link> */}
 
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
         {/* Project Header */}
         <div className="flex items-center mb-8">
-          <div className="w-2 h-2 bg-white rounded-full mr-3" />
+          <div className="w-2 h-2  bg-white rounded-full mr-3" />
           <h1 className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-light tracking-wider">
             New Project
           </h1>
@@ -176,7 +260,7 @@ const NewProjectForm = () => {
             className={`bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9] border-[#ffffff8b] rounded-lg p-8 ${
               isDragging ? "border-white" : ""
             }`}
-            onDragOver={handleDragOver} 
+            onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
           >
@@ -192,7 +276,7 @@ const NewProjectForm = () => {
               htmlFor="fileInput"
               className="h-full flex flex-col items-center justify-center text-white/80 cursor-pointer hover:text-white transition-colors"
             >
-              <Upload className="w-12 h-12 mb-4" />
+              <Upload className="w-12 h-12 mb-4 " />
               <span className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-light">
                 Upload Images
               </span>
@@ -233,7 +317,7 @@ const NewProjectForm = () => {
         </div>
 
         {/* Form Section */}
-        <div className="mt-8 bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9] border-white/20 rounded-lg p-8">
+        <div className="mt-8 bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9] border-[#ffffff8b]bg-transparent  border-white/20 rounded-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
             {/* Left Column */}
             <div className="space-y-6">
@@ -246,7 +330,7 @@ const NewProjectForm = () => {
                   name="projectName"
                   value={formData.projectName}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                  className=" w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
@@ -255,17 +339,17 @@ const NewProjectForm = () => {
                 </label>
                 <input
                   type="text"
-                  name="ownerName"
-                  value={formData.ownerName}
+                  name="name"
+                  value={formData.name}
                   onChange={handleInputChange}
                   className="w-full bg-transparent *: text-white border-b border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>
-                <label className= "text-lg text-white/80 block mb-2">
-                  Carbon {" "}
+                <label className="text-lg text-white/80 block mb-2">
+                  Carbon{" "}
                   <span className="text-lg bg-gradient-to-r  from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text">
-                  Credits Issued
+                    Credits Issued
                   </span>
                 </label>
                 <input
@@ -278,9 +362,9 @@ const NewProjectForm = () => {
               </div>
               <div>
                 <label className="text-lg text-white/80 block mb-2">
-                  Credits {" "}
+                  Credits{" "}
                   <span className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text">
-                  Price per ton
+                    Price per ton
                   </span>
                 </label>
                 <input
