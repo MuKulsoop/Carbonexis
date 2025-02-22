@@ -21,8 +21,8 @@ const UserDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0B1E] bg-gradient-to-b from-[#0A0B1E] to-[#1A1B3E] p-6">
-      {/* Header Section */}
+    <div className="min-h-screen bg-[#0A0B1E] bg-gradient-to-b from-[#0A0B1E] to-[#1A1B3E]  p-6">
+      {/* Header Section     linear-gradient(135deg, #0f0f1a, #1a1a2e);          */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
           Energy Portfolio
@@ -38,7 +38,7 @@ const UserDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-purple-300">Total Carbon Credits</p>
-                <p className="text-3xl font-bold text-white mt-2">245.8 tons</p>
+                <p className="text-3xl font-bold text-white mt-2">245.8 tons</p>cd
                 <div className="flex items-center text-green-400 text-sm mt-2">
                   <span>+12.3% this month</span>
                 </div>

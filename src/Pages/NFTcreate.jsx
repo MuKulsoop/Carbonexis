@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
 
+
 const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
   return (
     <div 
@@ -37,6 +38,7 @@ const NFTcreate = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
+
       [name]: value
     }));
   };
@@ -92,6 +94,7 @@ const NFTcreate = () => {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-b from-[#143A85] to-[#590040] p-8 relative overflow-hidden">
       {/* Background Animations */}
       <style jsx>{`
@@ -172,14 +175,14 @@ const NFTcreate = () => {
               name="description"
               value={formData.description}
               onChange={handleInputChange}
-              className="w-full bg-transparent text-white resize-none focus:outline-none border-b border-white/20"
+              className="w-full bg-transparent text-white resize-none focus: outline-none   "
               rows={4}
             />
           </div>
 
           <div className="space-y-4">
-            <div className="relative">
-              <h2 className="text-2xl bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-bold mb-4">Select Your Project ▼</h2>
+            <div className="relative bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9]">
+              <h2 className="text-2xl bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text  flex flex-col items-center font-bold mb-4">Select Your Project ▼</h2>
               <div 
                 className="bg-transparent border border-white/20 rounded-lg overflow-hidden cursor-pointer"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -187,7 +190,7 @@ const NFTcreate = () => {
                 {projects.map((project, index) => (
                   <div
                     key={project}
-                    className={`p-4 text-white/80 hover:bg-purple-600/20 transition-colors ${
+                    className={`p-4 text-white/80 flex flex-col items-center hover:bg-purple-600/20 transition-colors ${
                       formData.selectedProject === project ? 'bg-purple-600/20' : ''
                     }`}
                     onClick={() => handleProjectSelect(project)}
@@ -215,6 +218,7 @@ const NFTcreate = () => {
         </div>
       </form>
     </div>
+  </>
   );
 };
 
