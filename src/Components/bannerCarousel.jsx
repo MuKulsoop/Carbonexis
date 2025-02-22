@@ -10,12 +10,9 @@ import {
 } from "@/Components/ui/carousel";
 import PropTypes from 'prop-types';
 
-
 export default function BannerCarousel({projects, currentProjectIndex, setCurrentProjectIndex}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   console.log(currentIndex)
-
-  
 
   const handleSlideChange = (index) => {
     console.log(index)

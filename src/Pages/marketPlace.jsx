@@ -5,8 +5,6 @@ import BannerCarousel from "../Components/bannerCarousel";
 import CardCarousel from "../Components/cardCarousel";
 import "./marketPlace.css";
 
-import NFTInsta from "./NFTIntsa";
-
 export default function MarketPlace() {
   let trendingInArt = {
     heading: "Trending in Art",
@@ -131,7 +129,7 @@ export default function MarketPlace() {
     <>
       <div className="bg-[#0A021A] min-h-screen text-white">
         <NavBar />
-        <BannerCarousel />
+        <BannerCarousel projects={topProjects} currentProjectIndex={currentProjectIndex} setCurrentProjectIndex={setCurrentProjectIndex} />
 
         <div className="text-center my-8 ">
           <h1 className="text-5xl font-extrabold  text-white mb-6 bg-clip-text ">
