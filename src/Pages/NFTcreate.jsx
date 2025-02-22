@@ -124,6 +124,7 @@ const NFTCreate = () => {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-b from-[#143A85] to-[#590040] p-8 relative overflow-hidden">
       {/* Background Animations */}
       
@@ -256,6 +257,7 @@ const NFTCreate = () => {
         </div>
       </form>
     </div>
+  </>
   );
 };
 

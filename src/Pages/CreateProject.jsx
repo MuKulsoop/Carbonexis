@@ -10,6 +10,7 @@ import { ethers } from "ethers";
 
 const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
   return (
+    
     <div
       className={`absolute rounded-full bg-gradient-to-b from-[#b20aabc0] to-[#6e1fabc0] backdrop-blur-sm`}
       style={{
@@ -225,7 +226,8 @@ const NewProjectForm = () => {
       />
 
       {/* Home Icon */}
-      <Link to="/">
+      {/* <Sidebar /> */}
+      {/* <Link to="/">
         <div className="absolute left-8 top-8 text-white/80 hover:text-white cursor-pointer">
           <svg
             className="w-6 h-6"
@@ -241,12 +243,12 @@ const NewProjectForm = () => {
             />
           </svg>
         </div>
-      </Link>
+      </Link> */}
 
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
         {/* Project Header */}
         <div className="flex items-center mb-8">
-          <div className="w-2 h-2 bg-white rounded-full mr-3" />
+          <div className="w-2 h-2  bg-white rounded-full mr-3" />
           <h1 className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-light tracking-wider">
             New Project
           </h1>
@@ -274,7 +276,7 @@ const NewProjectForm = () => {
               htmlFor="fileInput"
               className="h-full flex flex-col items-center justify-center text-white/80 cursor-pointer hover:text-white transition-colors"
             >
-              <Upload className="w-12 h-12 mb-4" />
+              <Upload className="w-12 h-12 mb-4 " />
               <span className="text-lg bg-gradient-to-r from-[#FFFFFFE6] to-[#0037ffe3] text-transparent bg-clip-text font-light">
                 Upload Images
               </span>
@@ -315,7 +317,7 @@ const NewProjectForm = () => {
         </div>
 
         {/* Form Section */}
-        <div className="mt-8 bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9] border-white/20 rounded-lg p-8">
+        <div className="mt-8 bg-transparent border bg-gradient-to-b from-[#143a85ef] to-[#590040b9] border-[#ffffff8b]bg-transparent  border-white/20 rounded-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
             {/* Left Column */}
             <div className="space-y-6">
@@ -328,7 +330,7 @@ const NewProjectForm = () => {
                   name="projectName"
                   value={formData.projectName}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
+                  className=" w-full bg-transparent text-white border-b border-white/20 focus:outline-none focus:border-white/40"
                 />
               </div>
               <div>

@@ -120,9 +120,9 @@ export default function MarketPlace() {
       {
         title: "Melody in Bloom",
         nftUri:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAhmXdOF1LyPaNrk-pK8S5dV39Cu3UgtLeA&s",
+          "",
         price: 0.0025465,
-        tokenSymbol: "SOL",
+        tokenSymbol: "SOhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZAhmXdOF1LyPaNrk-pK8S5dV39Cu3UgtLeA&sL",
         tokenLogo: "https://i.ibb.co/Y75vB3MJ/zaCoin.png",
       },
     ],
