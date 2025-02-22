@@ -1,219 +1,189 @@
 import React from 'react';
-// import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
-import { Card, CardContent, CardFooter, CardHeader } from '@/Components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
-import { Button } from '@/Components/ui/button';
-import { Input } from '@/Components/ui/input';
-import { ScrollArea } from '@/Components/ui/scroll-area';
-import { Separator } from '@/Components/ui/separator';
-import { MessageCircle, Share2, Bookmark, MoreHorizontal, CirclePlus, Heart, Twitter } from 'lucide-react';
-import { useState } from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from '@/Components/ui/dialog';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { MessageCircle, Share2, MoreHorizontal, Heart, Globe, Shield, Leaf } from 'lucide-react';
+import NavBar from '@/Components/Navbar';
 
 const NFTInsta = () => {
+  const mockPosts = [
+    {
+      id: 1,
+      org: "SolarPower Initiative",
+      title: "Community Solar Farm NFT",
+      description: "Support renewable energy! Each NFT represents a share in our new solar farm project.",
+      auraPoints: 1500,
+      mints: 234,
+      price: "0.5 ETH",
+      impact: "Reduces 2.5 tons CO2/year",
+      image: "https://img.freepik.com/free-photo/solar-panels-roof-solar-cell_335224-1324.jpg",
+      verified: true
+    },
+    {
+      id: 2,
+      org: "GreenEarth Foundation",
+      title: "Reforestation Project Token",
+      description: "Join our mission to plant 10,000 trees. Each NFT funds 10 new trees.",
+      auraPoints: 2000,
+      mints: 156,
+      price: "0.3 ETH",
+      impact: "Plants 10 trees",
+      image: "https://www.prudenceindia.com/assets/images/environment.jpg",
+      verified: true
+    }
+  ];
 
-  const [commentsOpen, setCommentsOpen] = useState(false);
-  const [shareDialogOpen, setShareDialogOpen] = useState(false);
-  const [currentPostId, setCurrentPostId] = useState(null);
-
-  const openComments = (postId) => {
-    setCurrentPostId(postId);
-    setCommentsOpen(true);
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        type: 'spring',
+        stiffness: 100,
+        damping: 20
+      }
+    },
+    hover: { scale: 1.02 }
   };
 
-  const openShareDialog = (postId) => {
-    setCurrentPostId(postId);
-    setShareDialogOpen(true);
-  }
-
-
-  const mockComments = {
-    1: [
-      { username: 'nature_lover', text: 'Beautiful view! 😍', likes: 12 },
-      { username: 'mountain_climber', text: 'Where is this?', likes: 3 },
-      { username: 'travel_photographer', text: 'The lighting is perfect! What camera did you use?', likes: 5 },
-      { username: 'hikingaddict', text: 'I need to visit this place ASAP!', likes: 2 },
-      { username: 'outdoors_girl', text: 'This is absolutely breathtaking!', likes: 7 },
-      { username: 'landscapepro', text: 'The composition is stunning. Mind if I ask what time of day this was taken?', likes: 4 },
-      { username: 'sunset_chaser', text: 'Nothing beats a good sunset 🌅', likes: 9 }
-    ],
-    2: [
-      { username: 'foodie_central', text: 'Looks amazing! Recipe please?', likes: 8 },
-      { username: 'pasta_lover', text: 'Making me hungry! 🤤', likes: 5 },
-      { username: 'chef_jamie', text: 'Great plating! Did you use fresh basil?', likes: 6 },
-      { username: 'cooking_mom', text: 'Ill try making this tonight!', likes: 2 },
-      { username: 'italianfoodie', text: 'As an Italian, I approve this pasta 👌', likes: 15 },
-      { username: 'healthy_eats', text: 'Homemade is always the best! What ingredients did you use?', likes: 3 },
-      { username: 'food_photographer', text: 'The lighting on this shot is perfect', likes: 7 }
-    ]
-  };
   return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/30 p-8">
+    <NavBar />
+      <div className="max-w-7xl mx-auto mt-6">
+        <div className="grid grid-cols-1 gap-8">
+          <AnimatePresence>
+            {mockPosts.map((post) => (
+              <motion.div
+                key={post.id}
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+              >
+                <Card className="bg-gradient-to-r from-gray-800 to-gray-900/80 border-0 rounded-2xl shadow-xl overflow-hidden">
+                  <div className="flex flex-col md:flex-row">
+                    {/* Image Section */}
+                    <motion.div 
+                      className="md:w-1/2 relative group overflow-hidden"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: 'spring', stiffness: 200 }}
+                    >
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-64 md:h-96 object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 p-6">
+                        <div className="flex items-center gap-2">
+                          <Leaf className="h-6 w-6 text-green-400" />
+                          <h2 className="text-2xl font-bold text-white">{post.title}</h2>
+                        </div>
+                      </div>
+                    </motion.div>
 
-    <div className="min-h-screen">
-     
-      <main className="container mx-auto max-w-2xl px-4 py-6 space-y-6">
-        {/* Posts */}
-        {[1, 2].map((postId) => (
-          <Card key={postId} className="overflow-hidden border-none">
-            <CardHeader className="flex flex-row items-center justify-between p-4">
-              <div className="flex items-center space-x-2">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src={`/api/placeholder/32/32?text=User${postId}`} />
-                  <AvatarFallback>U{postId}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-sm font-medium">user_{postId}</p>
-                </div>
-              </div>
-              <Button variant="ghost" size="icon">
-                <MoreHorizontal className="h-5 w-5" />
-              </Button>
-            </CardHeader>
+                    {/* Content Section */}
+                    <div className="md:w-1/2 p-6 space-y-6">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <Avatar className="h-12 w-12 ring-2 ring-purple-500">
+                            <AvatarImage src={post.image} />
+                            <AvatarFallback className="bg-purple-700">{post.org[0]}</AvatarFallback>
+                          </Avatar>
+                          <div>
+                            <p className="text-xl font-semibold text-white">{post.org}</p>
+                            <motion.div 
+                              className="px-2 py-1 bg-purple-600/30 rounded-full"
+                              whileHover={{ scale: 1.05 }}
+                            >
+                              <span className="text-sm text-purple-400">🌟 {post.auraPoints} Aura Points</span>
+                            </motion.div>
+                          </div>
+                        </div>
+                      </div>
 
-            <div className="relative aspect-square">
-              <img 
-                src={`https://media.decentralized-content.com/-/rs:fill:1180:1574/g:ce/f:webp/aHR0cHM6Ly9tYWdpYy5kZWNlbnRyYWxpemVkLWNvbnRlbnQuY29tL2lwZnMvYmFmeWJlaWh0NzMyYjVtcGlqaGJhdTNuNHZpd3M3b2ZtaG9jdXVkeWZ0bnJlbHg1eHp0eW1memR5NHE`} 
-                alt={`Post ${postId}`}
-                className="object-cover w-full h-full"
-              />
-            </div>
+                      <motion.p 
+                        className="text-gray-300 text-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {post.description}
+                      </motion.p>
 
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center space-x-2">
-                  <Button variant="ghost" size="icon" className="hover:text-green-500">
-                    <CirclePlus className="h-7 w-7" />
-                  </Button>
-                  <Button variant="ghost" size="icon">
-                    <MessageCircle className="h-7 w-7" />
-                  </Button>
-                  <Button onClick={() => openShareDialog(postId)} variant="ghost" size="icon">
-                    <Share2 className="h-7 w-7" />
-                  </Button>
-                </div>
-                <Button className="text-white rounded-full bg-black hover:bg-gray-800" variant="secondary">
-                  Buy
-                </Button>
-              </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <motion.div 
+                          className="bg-gray-800/50 p-4 rounded-xl"
+                          whileHover={{ y: -5 }}
+                        >
+                          <p className="text-sm text-gray-400">Total Mints</p>
+                          <p className="text-2xl font-bold text-purple-400">{post.mints}</p>
+                        </motion.div>
+                        <motion.div 
+                          className="bg-gray-800/50 p-4 rounded-xl"
+                          whileHover={{ y: -5 }}
+                        >
+                          <p className="text-sm text-gray-400">Price</p>
+                          <p className="text-2xl font-bold text-green-400">{post.price}</p>
+                        </motion.div>
+                      </div>
 
-              <p className="font-medium text-sm mb-1">123 mints</p>
-              
-              <div className="space-y-1 mb-2">
-                <p className="text-sm">
-                  <span className="font-medium">user_{postId}</span>{' '}
-                    Amazing sunset view from my hike today! #nature #adventure </p>
-              </div>
+                      <motion.div 
+                        className="bg-gradient-to-r from-purple-600/20 to-green-600/20 p-4 rounded-xl border border-purple-500/30"
+                        initial={{ x: -50 }}
+                        animate={{ x: 0 }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <Globe className="h-6 w-6 text-green-400" />
+                          <div>
+                            <p className="text-sm text-gray-300">Environmental Impact</p>
+                            <p className="text-lg font-semibold text-white">{post.impact}</p>
+                          </div>
+                        </div>
+                      </motion.div>
 
-              <div className="space-y-1">
-                <p className="text-sm">
-                  <span className="font-medium">commenter_1</span>{' '}
-                  {postId === 1 ? "Beautiful view! 😍" : "Looks amazing! Recipe please?"}
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">commenter_2</span>{' '}
-                  {postId === 1 ? "Where is this?" : "Making me hungry! 🤤"}
-                </p>
-              </div>
-              <Button                   
-              onClick={() => openComments(postId)}
-              variant="link" size="sm" className="p-0 h-auto text-gray-500">
-                  View all {mockComments[postId].length} comments
-            </Button>
-            </CardContent>
+                      <div className="flex items-center justify-between">
+                        <div className="flex gap-4">
+                          <motion.div whileHover={{ scale: 1.1 }}>
+                            <Button variant="ghost" className="text-purple-400 hover:bg-gray-700/50 rounded-full">
+                              <Heart className="h-5 w-5 mr-2" /> {post.mints}
+                            </Button>
+                          </motion.div>
+                          <motion.div whileHover={{ scale: 1.1 }}>
+                            <Button variant="ghost" className="text-purple-400 hover:bg-gray-700/50 rounded-full">
+                              <Share2 className="h-5 w-5 mr-2" /> Share
+                            </Button>
+                          </motion.div>
+                        </div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button className="bg-gradient-to-r from-purple-600 to-green-500 hover:from-purple-700 hover:to-green-600 text-white px-6 py-4 rounded-full text-lg font-semibold">
+                            Mint Now
+                          </Button>
+                        </motion.div>
+                      </div>
 
-            
-          </Card>
-        ))}
-      </main>
-
-        {/* share dialog */}
-        <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-left">Share</DialogTitle>
-          </DialogHeader>
-
-          <div className="shareContent block gap-x-10">
-
-            <div className="icons flex gap-3">
-            <Button variant="secondary" size="icon" className="rounded-full w-12 h-12">
-                    <Twitter className='w-12 h-12' />
-            </Button>
-            <Button variant="secondary" size="icon" className="rounded-full w-12 h-12">
-                    <Twitter className='w-12 h-12' />
-            </Button>
-            <Button variant="secondary" size="icon" className="rounded-full w-12 h-12">
-                    <Twitter className='w-12 h-12' />
-            </Button>
-            <Button variant="secondary" size="icon" className="rounded-full w-12 h-12">
-                    <Twitter className='w-12 h-12' />
-            </Button>
-            </div>
-            
-
-          </div>
-          
-          
-
-        </DialogContent>
-        </Dialog>
-
-       {/* Comments Dialog */}
-       <Dialog open={commentsOpen} onOpenChange={setCommentsOpen}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-center">Comments</DialogTitle>
-          </DialogHeader>
-          <ScrollArea className="max-h-96 pr-4 -mr-4">
-            <div className="space-y-4 py-4">
-              {currentPostId && mockComments[currentPostId].map((comment, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src={`/api/placeholder/32/32?text=${comment.username.charAt(0)}`} />
-                    <AvatarFallback>{comment.username.charAt(0).toUpperCase()}</AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1">
-                    <div className="flex items-start">
-                      <p className="text-sm">
-                        <span className="font-medium">{comment.username}</span>{' '}
-                        {comment.text}
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <span className="text-xs text-gray-500">2h</span>
-                      <Button variant="link" size="sm" className="h-auto p-0 text-xs text-gray-500">
-                        {comment.likes} likes
-                      </Button>
-                      <Button variant="link" size="sm" className="h-auto p-0 text-xs text-gray-500">
-                        Reply
-                      </Button>
+                      {post.verified && (
+                        <motion.div 
+                          className="flex items-center gap-2 justify-end"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                        >
+                          <Shield className="h-4 w-4 text-purple-400" />
+                          <span className="text-sm text-gray-400">CXIS Verified Impact</span>
+                        </motion.div>
+                      )}
                     </div>
                   </div>
-                  <Button variant="ghost" size="icon" className="h-5 w-5">
-                    <Heart className="h-3 w-3" />
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </ScrollArea>
-          <div className="pt-2 border-t">
-            <div className="flex items-center">
-              <Input 
-                placeholder="Add a comment..." 
-                className="border-none bg-transparent flex-grow focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-              <Button variant="ghost" className="text-blue-500 font-medium">
-                Post
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+      </div>
     </div>
   );
 };

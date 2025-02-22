@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Upload, ChevronDown, Check } from "lucide-react";
-
+import NavBar from "@/Components/Navbar";
 
 const FloatingCircle = ({ size, delay, duration, initialPosition }) => {
   return (
     <div
-      className="absolute rounded-full bg-gradient-to-b from-[#b20aa7a5] to-[#6e1fab7e] backdrop-blur-sm"
+      className="absolute rounded-full bg-gradient-to-b from-[#b20aa7a5] to-[#6e1fab7e] backdrop-blur-sm z-0"
       style={{
         width: size,
         height: size,
@@ -33,7 +33,7 @@ const NFTCreate = () => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const dropdownRef = useRef(null);
 
-  const projects = ["Project 1", "Project 2", "Project 3"];
+  const projects = ["Project 1", "Project 2"];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -87,18 +87,46 @@ const NFTCreate = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.selectedProject || !formData.nftFile) {
       alert("Please select a project and upload an NFT file.");
       return;
     }
-    console.log("Form submitted:", formData);
+    if (!signer) {
+      await connectWallet();
+    }
+
+  //   try{
+  //     const formPayload = new FormData();
+  //     formPayload.append("minimumMintedPrice", formData.minimumMintedPrice);
+  //     formPayload.append("buyingPrice", formData.buyingPrice);
+  //     formPayload.append("sellingPrice", formData.sellingPrice);
+  //     formPayload.append("location", formData.location);
+  //     formPayload.append("description", formData.description);
+  //     formPayload.append("selectedProject", formData.selectedProject);
+  //     formPayload.append("nftFile", formData.nftFile);
+
+  //     // const response = await fetch(
+  //     //   "http://localhost:8000/api/nft/create",
+  //     //   {
+  //     //     method: "POST",
+  //     //     headers:{
+  //     //       "Content-Type": "application/json",
+  //     //     }
+  //     //   }
+  //     // )
+
+
+  //   }
+
+
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#143A85] to-[#590040] p-8 relative overflow-hidden">
       {/* Background Animations */}
+      
       <style jsx>{`
         @keyframes float {
           0%,
@@ -122,7 +150,7 @@ const NFTCreate = () => {
         duration={6}
         initialPosition={{ right: "100px", top: "400px" }}
       />
-
+      
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex items-center mb-8">
@@ -169,7 +197,7 @@ const NFTCreate = () => {
           </div>
 
           {/* Form Fields */}
-          <div className="space-y-6">
+          <div className="space-y-6 z-0">
             {["Description","Minimum Minted Price", "Buying Price", "Selling Price", "Location"].map(
               (label) => (
                 <div key={label}>
@@ -196,7 +224,7 @@ const NFTCreate = () => {
       </h2>
       {/* Dropdown Toggle Button */}
       <div
-        className="bg-transparent border border-white/20 rounded-lg p-4 flex justify-between items-center cursor-pointer"
+        className="bg-transparent border text-white border-white/30 rounded-lg p-4 flex justify-between items-center cursor-pointer"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         {formData.selectedProject || "Choose a project"}
@@ -205,11 +233,11 @@ const NFTCreate = () => {
 
       {/* Dropdown List */}
       {isDropdownOpen && (
-        <div className="absolute z-10 bg-[#1c1c1c] border border-white/20 rounded-lg mt-2 w-full shadow-lg transition-all">
+        <div className="absolute z-10 text-white border-white/25 rounded-lg mt-2 w-full shadow-lg transition-all">
           {projects.map((project) => (
             <div
               key={project}
-              className="p-4 text-white/80 hover:bg-purple-600/20 transition-colors flex justify-between items-center cursor-pointer"
+              className="p-4 text-white/80 hover:bg-[#3a112fc6] transition-colors flex justify-between items-center cursor-pointer"
               onClick={() => handleProjectSelect(project)}
             >
               {project}
@@ -221,7 +249,8 @@ const NFTCreate = () => {
     </div>
         {/* Submit Button */}
         <div className="flex justify-end mt-8">
-          <button type="submit" className="bg-purple-600 text-white px-8 py-2 rounded-lg shadow-lg hover:shadow-purple-500/50">
+          <button type="submit" className="relative px-10 py-2 bg-gradient-to-r from-[#e11cffb9] to-[#ea007188] text-white rounded-lg 
+                shadow-lg transition duration-300 hover:shadow-purple-500/50">
             POST NFT
           </button>
         </div>
