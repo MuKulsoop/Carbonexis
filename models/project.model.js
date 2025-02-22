@@ -3,15 +3,12 @@ import mongoose from "mongoose";
 const ProjectSchema = new mongoose.Schema(
   {
     owner: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
+      type: String,
     },
     name: {
       type: String,
       required: true,
       trim: true,
-      minlength: 5,
     },
     description: {
       type: String,
@@ -33,16 +30,27 @@ const ProjectSchema = new mongoose.Schema(
     },
     creditsPricePerTon: {
       type: Number,
-      required: true,
       min: 0,
     },
     validator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Validator",
     },
+    blockchainProjectId: {
+      type: Number,
+      unique: true,
+      sparse: true,
+    },
+    nftLink: {
+      type: String,
+    },
+    nftMinted: {
+      type: Boolean,
+      default: false,
+    },
     status: {
       type: String,
-      enum: ["Pending", "Approved", "Rejected"],
+      enum: ["Pending", "NFTMinted", "BlockchainRegistered", "Approved", "Rejected"],
       default: "Pending",
     },
     upvotes: {

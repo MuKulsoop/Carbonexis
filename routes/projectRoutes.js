@@ -11,16 +11,16 @@ import { protect, isProjectOwner, isValidatorOrAdmin, isAdmin } from "../middlew
 
 const router = express.Router();
 
-router.post("/create", protect, isProjectOwner, createProject);
+router.post("/create", createProject);
 
 router.get("/", getAllProjects);
 
 router.get("/:projectId", getProjectById);
 
-router.put("/:projectId/status", protect, isValidatorOrAdmin, updateProject);
+router.put("/:projectId/status",  updateProject);
 
-router.put("/:projectId/upvote", protect, upvoteProject);
+router.put("/:projectId/upvote",  upvoteProject);
 
-router.post("/:projectId/comments", protect, commentOnProject);
+router.post("/:projectId/comments", commentOnProject);
 
 export default router;
